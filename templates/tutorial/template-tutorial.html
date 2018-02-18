@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style type="text/css">
+      @supports -ko-blockdefs {
+        text {
+          widget: text;
+        }
+
+        listsize {
+          widget: select;
+          options: 1 | 2 | 3;
+        }
+
+        color {
+          widget: color;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="preface">
+        <h1>This is the Mosaico Tutorial</h1>
+    </div>
+
+    <div data-ko-container="main">
+      <div data-ko-block="HeaderAndText">
+        <h1 data-ko-editable="headerText">this is header</h1>
+        <div data-ko-editable="bodyText">Content</div>
+      </div>
+
+      <div data-ko-block="fixedList" style="background-color: #f0f0f0; -ko-background-color: @color;">
+        <h1 data-ko-editable="listHeaderText">List Header</h1>
+        <ul>
+          <li>
+            <div data-ko-editable="firstBodyText">item 1</div>
+          </li>
+          <li data-ko-display="listsize gt 1 ">
+            <div data-ko-editable="secondBodyText">item 2</div>
+          </li>
+          <li data-ko-display="listsize gt 2">
+            <div data-ko-editable="thirdBodyText">item 3</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="trailer">
+        <h1>This is the end of Mosaico Tutorial</h1>
+    </div>
+  </body>
+</html>
