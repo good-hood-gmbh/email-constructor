@@ -50,14 +50,20 @@ a {
 
 a:hover,
 a > h1:hover,
+a > .h1:hover,
 a > h2:hover,
-a > h3:hover {
+a > .h2:hover,
+a > h3:hover,
+a > .h3:hover {
   color: #575757 !important;
 }
 
 a > h1,
+a > .h1,
 a > h2,
-a > h3 {
+a > .h2,
+a > h3,
+a > .h3 {
   color: #799189;
 }
 
@@ -67,7 +73,8 @@ small a {
   line-height: 14px;
 }
 
-h1 {
+h1,
+.h1 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   font-size: 20px;
   font-weight: bold;
@@ -75,7 +82,8 @@ h1 {
   color: #757575;
 }
 
-h2 {
+h2,
+.h2 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   font-size: 17px;
   font-weight: bold;
@@ -83,7 +91,8 @@ h2 {
   color: #757575;
 }
 
-h3 {
+h3,
+.h3 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   font-size: 14px;
   font-weight: bold;

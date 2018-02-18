@@ -35,6 +35,8 @@ div[style*="margin: 16px 0;"] { margin: 0 !important; }
 /* DISPLAY ISSUES FIX */
 img { margin:0; padding:0; border:none; display:block; }
 
+p { margin:0; padding:0; }
+
 </style>
     <style>
 body,
@@ -89,14 +91,20 @@ a {
 
 a:hover,
 a > h1:hover,
+a > .h1:hover,
 a > h2:hover,
-a > h3:hover {
+a > .h2:hover,
+a > h3:hover,
+a > .h3:hover {
   color: #575757 !important;
 }
 
 a > h1,
+a > .h1,
 a > h2,
-a > h3 {
+a > .h2,
+a > h3,
+a > .h3 {
   color: #799189;
 }
 
@@ -106,7 +114,8 @@ small a {
   line-height: 14px;
 }
 
-h1 {
+h1,
+.h1 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   font-size: 20px;
   font-weight: bold;
@@ -114,7 +123,8 @@ h1 {
   color: #757575;
 }
 
-h2 {
+h2,
+.h2 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   font-size: 17px;
   font-weight: bold;
@@ -122,7 +132,8 @@ h2 {
   color: #757575;
 }
 
-h3 {
+h3,
+.h3 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -300,6 +311,22 @@ body,
 }
 
 </style>
+    <style>
+.c-meta-container {
+  text-align: center;
+}
+
+.c-meta-text {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.c-meta-text a {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+</style>
 
     <style type="text/css">
       @supports -ko-blockdefs {
@@ -307,6 +334,11 @@ body,
           label: Email Locale;
           widget: select;
           options: 1=Germany | 2=French;
+        }
+    
+        text {
+          label: Content;
+          widget: text;
         }
       }
     </style>
@@ -464,6 +496,128 @@ body,
                             </tr>
                           </table>
                           
+                          </div>
+                          <div data-ko-block="h1">
+                          <table class="grid c-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; background-color: #ffffff; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td class="c-card-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top;" valign="top">
+                                <table class="grid" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; width: 90%; text-align: center; border-collapse: collapse !important;" width="90%" cellpadding="0" cellspacing="0" border="0" align="center">
+                                  <tr>
+                                    <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
+                                          <div class="h1" data-ko-editable="h1Text" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 20px; font-weight: bold; line-height: 25px; color: #757575;">H1 Header</div>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                          </table>
+                          </div>
+                          <div data-ko-block="h2">
+                          <table class="grid c-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; background-color: #ffffff; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td class="c-card-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top;" valign="top">
+                                <table class="grid" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; width: 90%; text-align: center; border-collapse: collapse !important;" width="90%" cellpadding="0" cellspacing="0" border="0" align="center">
+                                  <tr>
+                                    <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
+                                          <div class="h2" data-ko-editable="h2Text" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; font-weight: bold; line-height: 20px; color: #757575;">H2 Header</div>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                          </table>
+                          </div>
+                          <div data-ko-block="h3">
+                          <table class="grid c-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; background-color: #ffffff; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td class="c-card-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top;" valign="top">
+                                <table class="grid" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; width: 90%; text-align: center; border-collapse: collapse !important;" width="90%" cellpadding="0" cellspacing="0" border="0" align="center">
+                                  <tr>
+                                    <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
+                                          <div class="h3" data-ko-editable="h3Text" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: bold; line-height: 17px; text-transform: uppercase; color: #757575;">H3 Header</div>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                          </table>
+                          </div>
+                          <div data-ko-block="body">
+                          <table class="grid c-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; background-color: #ffffff; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td class="c-card-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top;" valign="top">
+                                <table class="grid" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; width: 90%; text-align: center; border-collapse: collapse !important;" width="90%" cellpadding="0" cellspacing="0" border="0" align="center">
+                                  <tr>
+                                    <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
+                                          <div class="text" data-ko-editable="bodyText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Body</div>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                          </table>
+                          </div>
+                          <div data-ko-block="quote">
+                          <table class="grid c-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; background-color: #ffffff; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td class="c-card-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top;" valign="top">
+                                <table class="grid" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; width: 90%; text-align: center; border-collapse: collapse !important;" width="90%" cellpadding="0" cellspacing="0" border="0" align="center">
+                                  <tr>
+                                    <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
+                                          <div class="quote" data-ko-editable="quoteText" style="font-family: Times, serif; font-size: 17px; font-style: italic; line-height: 20px; color: #757575;">Body</div>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                          </table>
+                          </div>
+                          <div data-ko-block="meta">
+                            <table class="grid c-meta" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0">
+                              <tr>
+                                <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td class="c-meta-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: center;" align="center">
+                                  <div class="c-meta-text" data-ko-editable="metaText" style="font-size: 12px; line-height: 14px;">
+                                    Meta
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                              </tr>
+                            </table>
                           </div>
                         </div>
                 </td>
