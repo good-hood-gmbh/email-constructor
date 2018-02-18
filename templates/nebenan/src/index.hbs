@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Nebenan newsletter</title>
+
+    <link rel="stylesheet" href="src/styles/defaults/overrides.css">
+    <link rel="stylesheet" href="src/styles/defaults/copy.css">
+    <link rel="stylesheet" href="src/styles/defaults/emoji.css">
+    <link rel="stylesheet" href="src/styles/defaults/grid.css">
+
+    <link rel="stylesheet" href="src/styles/partials/card.css">
+    <link rel="stylesheet" href="src/styles/partials/layout.css">
+    <link rel="stylesheet" href="src/styles/partials/header.css">
+    <link rel="stylesheet" href="src/styles/partials/separator.css">
+
+    {{> blocks }}
+  </head>
+  <body>
+    {{#> layout}}
+      <div data-ko-container="main" data-ko-wrap="false">
+        {{> header }}
+        {{> separator }}
+        {{> separator_wide }}
+      </div>
+    {{/layout}}
+  </body>
+</html>

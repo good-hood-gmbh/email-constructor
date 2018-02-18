@@ -1,0 +1,29 @@
+.c-header > table > tr .grid-space {
+  height: 20px;
+  line-height: 20px;
+  font-size: 20px;
+}
+
+.c-header > table > tr:last-child .grid-space {
+  height: 8px;
+  line-height: 8px;
+  font-size: 8px;
+}
+
+.c-header-logo {
+  width: 160px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.c-header-label {
+  text-align: right;
+  vertical-align: middle;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.c-header-label a {
+  font-size: 12px;
+  line-height: 14px;
+}

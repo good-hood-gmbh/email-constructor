@@ -36,7 +36,9 @@
       var viewModel = {
         showSaved: ko.observable(false),
         edits: ko.observableArray(initialEdits),
-        templates: []
+        templates: [{
+          name: 'nebenan', desc: 'Nebenan Newsletter'
+        }]
       };
 
       viewModel.edits.subscribe(function(newEdits) {

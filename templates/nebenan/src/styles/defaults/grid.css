@@ -1,0 +1,25 @@
+.grid {
+  width: 100%;
+  cellpadding: 0;
+  cellspacing: 0;
+  table-layout: fixed;
+  border: 0;
+}
+
+.grid-space {
+  height: 10px;
+  line-height: 10px;
+  font-size: 10px;
+}
+
+.grid-space-medium {
+  height: 15px;
+  line-height: 15px;
+  font-size: 15px;
+}
+
+.grid-space-large {
+  height: 25px;
+  line-height: 25px;
+  font-size: 25px;
+}
