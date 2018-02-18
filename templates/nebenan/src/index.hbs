@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="src/styles/partials/layout.css">
     <link rel="stylesheet" href="src/styles/partials/header.css">
     <link rel="stylesheet" href="src/styles/partials/separator.css">
+    <link rel="stylesheet" href="src/styles/partials/space.css">
 
     {{> blocks }}
   </head>
@@ -23,8 +24,11 @@
     {{#> layout}}
       <div data-ko-container="main" data-ko-wrap="false">
         {{> header }}
-        {{> separator }}
         {{> separator_wide }}
+        {{> separator }}
+        {{> space_large }}
+        {{> space }}
+        {{> space_small }}
       </div>
     {{/layout}}
   </body>
