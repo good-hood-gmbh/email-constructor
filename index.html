@@ -36,13 +36,7 @@
       var viewModel = {
         showSaved: ko.observable(false),
         edits: ko.observableArray(initialEdits),
-        templates: [{
-          name: 'versafix-1', desc: 'The versatile template'
-        },{
-          name: 'tedc15', desc: 'The TEDC15 template'
-        },{
-          name: 'tutorial', desc: 'The Tutorial'
-        }]
+        templates: []
       };
 
       viewModel.edits.subscribe(function(newEdits) {
@@ -121,7 +115,7 @@ a, a:link, a:visited {
 .template {
   margin: 10px;
   display: inline-block;
-  vertical-align: top; 
+  vertical-align: top;
 }
 .template a {
   display: block;
