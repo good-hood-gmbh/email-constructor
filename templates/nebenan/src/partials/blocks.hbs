@@ -10,5 +10,26 @@
       label: Content;
       widget: text;
     }
+
+    url {
+      label: Link;
+      widget: url;
+    }
+
+    src {
+      label: Image;
+      widget: src;
+    }
+
+    alt {
+      label: Alternative Text;
+      widget: text;
+      help: Alternative text will be shown on email clients that does not download image automatically;
+    }
+
+    image {
+      label: Image;
+      properties: src alt;
+    }
   }
 </style>

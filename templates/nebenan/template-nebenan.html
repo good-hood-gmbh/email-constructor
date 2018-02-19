@@ -185,6 +185,41 @@ img.emoji {
 }
 
 </style>
+    <style>
+.button,
+.button-container {
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
+}
+
+.button-block {
+  display: inline-block;
+
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+
+  background-color: #b2ca06;
+  border-top: 10px solid #b2ca06;
+  border-bottom: 10px solid #b2ca06;
+  border-left: 30px solid #b2ca06;
+  border-right: 30px solid #b2ca06;
+}
+
+.button-block:hover {
+  color: #ffffff !important;
+  border-color: #bad306  !important;
+  background-color: #bad306  !important;
+}
+
+</style>
 
     <style>
 .c-card {
@@ -339,6 +374,27 @@ body,
         text {
           label: Content;
           widget: text;
+        }
+    
+        url {
+          label: Link;
+          widget: url;
+        }
+    
+        src {
+          label: Image;
+          widget: src;
+        }
+    
+        alt {
+          label: Alternative Text;
+          widget: text;
+          help: Alternative text will be shown on email clients that does not download image automatically;
+        }
+    
+        image {
+          label: Image;
+          properties: src alt;
         }
       }
     </style>
@@ -497,6 +553,12 @@ body,
                           </table>
                           
                           </div>
+                          <div data-ko-block="image_cover" class="c-image_cover">
+                            <img src="images/image_cover_placeholder.png" height="200" width="100%" alt="" vspace="0" hspace="0" border="0" style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block;">
+                          </div>
+                          <div data-ko-block="image_cover_small" class="c-image_cover_small">
+                            <img src="images/image_cover_small_placeholder.png" height="120" width="100%" alt="" vspace="0" hspace="0" border="0" style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block;">
+                          </div>
                           <div data-ko-block="h1">
                           <table class="grid c-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; background-color: #ffffff; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
                             <tr>
@@ -618,6 +680,64 @@ body,
                                 <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
                               </tr>
                             </table>
+                          </div>
+                          <div data-ko-block="button">
+                          <table class="grid c-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; background-color: #ffffff; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td class="c-card-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top;" valign="top">
+                                <table class="grid" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; width: 90%; text-align: center; border-collapse: collapse !important;" width="90%" cellpadding="0" cellspacing="0" border="0" align="center">
+                                  <tr>
+                                    <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
+                                          <table class="button" border="0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -premailer-cellpadding: 0; -premailer-cellspacing: 0; border-collapse: collapse !important;">
+                                            <tr>
+                                              <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                <table class="button-container" border="0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -premailer-cellpadding: 0; -premailer-cellspacing: 0; border-collapse: collapse !important;">
+                                                  <tr>
+                                                    <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                      <a target="_blank" class="button-block" data-ko-editable="buttonText" data-ko-link="buttonUrl" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; display: inline-block; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 17px; font-weight: bold; color: #ffffff; text-decoration: none; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background-color: #b2ca06; border-top: 10px solid #b2ca06; border-bottom: 10px solid #b2ca06; border-left: 30px solid #b2ca06; border-right: 30px solid #b2ca06;">
+                                                        Button
+                                                      </a>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                          </table>
+                          </div>
+                          <div data-ko-block="button_link">
+                          <table class="grid c-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; background-color: #ffffff; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td class="c-card-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top;" valign="top">
+                                <table class="grid" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; width: 90%; text-align: center; border-collapse: collapse !important;" width="90%" cellpadding="0" cellspacing="0" border="0" align="center">
+                                  <tr>
+                                    <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
+                                          <a target="_blank" data-ko-editable="buttonLinkText" data-ko-link="buttonLinkUrl" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: bold; line-height: 20px; color: #799189; text-decoration: none;">
+                                            Button
+                                          </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                          </table>
                           </div>
                         </div>
                 </td>
