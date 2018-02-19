@@ -1,0 +1,9 @@
+.c-separator-line {
+  height: 1px;
+  width: 100%;
+  background-color: #edede9;
+}
+
+.c-separator-wide .c-card-container > table {
+  width: 100%;
+}

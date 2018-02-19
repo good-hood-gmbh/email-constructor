@@ -1,0 +1,32 @@
+.button,
+.button-container {
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
+}
+
+.button-block {
+  display: inline-block;
+
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+
+  background-color: #b2ca06;
+  border-top: 10px solid #b2ca06;
+  border-bottom: 10px solid #b2ca06;
+  border-left: 30px solid #b2ca06;
+  border-right: 30px solid #b2ca06;
+}
+
+.button-block:hover {
+  color: #ffffff !important;
+  border-color: #bad306  !important;
+  background-color: #bad306  !important;
+}
