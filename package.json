@@ -96,9 +96,7 @@
     "gulp": "3.9.1",
     "gulp-watch": "5.0.0",
     "run-sequence": "2.2.1",
-    "handlebars": "4.0.11",
-    "html-beautify": "1.0.4",
-    "juice": "4.2.2"
+    "handlebars": "4.0.11"
   },
   "author": "Stefano Bagnara",
   "license": "GPL-3.0",
