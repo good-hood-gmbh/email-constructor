@@ -1,0 +1,12 @@
+.c-media_box-container td {
+  width: 50%;
+}
+
+.c-media_box-container .c-media_box-space {
+  width: 20px;
+}
+
+.c-media_box-text {
+  vertical-align: top;
+  text-align: left;
+}

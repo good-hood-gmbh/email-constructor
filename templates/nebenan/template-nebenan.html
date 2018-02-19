@@ -362,6 +362,35 @@ body,
 }
 
 </style>
+    <style>
+.c-image_box-size-2 .c-image_box-container td {
+  width: 50%;
+}
+
+.c-image_box-size-3 .c-image_box-container td {
+  width: 33%;
+}
+
+.c-image_box .c-image_box-container .c-image_box-space {
+  width: 10px;
+}
+
+</style>
+    <style>
+.c-media_box-container td {
+  width: 50%;
+}
+
+.c-media_box-container .c-media_box-space {
+  width: 20px;
+}
+
+.c-media_box-text {
+  vertical-align: top;
+  text-align: left;
+}
+
+</style>
 
     <style type="text/css">
       @supports -ko-blockdefs {
@@ -369,6 +398,11 @@ body,
           label: Email Locale;
           widget: select;
           options: 1=Germany | 2=French;
+        }
+    
+        height {
+          label: Height;
+          widget: integer;
         }
     
         text {
@@ -554,10 +588,10 @@ body,
                           
                           </div>
                           <div data-ko-block="image_cover" class="c-image_cover">
-                            <img src="images/image_cover_placeholder.png" height="200" width="100%" alt="" vspace="0" hspace="0" border="0" style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block;">
+                            <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-alt: @image.alt;" src="images/image_cover_placeholder.png" height="200" width="100%" alt="" vspace="0" hspace="0" border="0">
                           </div>
                           <div data-ko-block="image_cover_small" class="c-image_cover_small">
-                            <img src="images/image_cover_small_placeholder.png" height="120" width="100%" alt="" vspace="0" hspace="0" border="0" style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block;">
+                            <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-alt: @image.alt;" src="images/image_cover_small_placeholder.png" height="120" width="100%" alt="" vspace="0" hspace="0" border="0">
                           </div>
                           <div data-ko-block="h1">
                           <table class="grid c-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; background-color: #ffffff; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
@@ -729,6 +763,177 @@ body,
                                           <a target="_blank" data-ko-editable="buttonLinkText" data-ko-link="buttonLinkUrl" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: bold; line-height: 20px; color: #799189; text-decoration: none;">
                                             Button
                                           </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                          </table>
+                          </div>
+                          <div data-ko-block="image_box" class="c-image_box">
+                          <table class="grid c-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; background-color: #ffffff; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td class="c-card-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top;" valign="top">
+                                <table class="grid" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; width: 90%; text-align: center; border-collapse: collapse !important;" width="90%" cellpadding="0" cellspacing="0" border="0" align="center">
+                                  <tr>
+                                    <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
+                                          <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-height: @height; -ko-attr-alt: @image.alt;" src="images/image_box_placeholder.png" height="270" width="100%" alt="" vspace="0" hspace="0" border="0">
+                                          <br>
+                                          <div class="text" data-ko-editable="text" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                          </table>
+                          </div>
+                          <div data-ko-block="image_box_2" class="c-image_box c-image_box-size-2">
+                          <table class="grid c-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; background-color: #ffffff; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td class="c-card-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top;" valign="top">
+                                <table class="grid" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; width: 90%; text-align: center; border-collapse: collapse !important;" width="90%" cellpadding="0" cellspacing="0" border="0" align="center">
+                                  <tr>
+                                    <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
+                                          <table class="grid c-image_box-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                              <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 50%;" width="50%">
+                                                <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-alt: @firstImage.alt;" src="images/image_box_2_placeholder.png" height="180" width="100%" alt="" vspace="0" hspace="0" border="0">
+                                                <br>
+                                                <div class="text" data-ko-editable="firstText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
+                                              </td>
+                                      
+                                              <td class="c-image_box-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 10px;" width="10">&nbsp;</td>
+                                      
+                                              <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 50%;" width="50%">
+                                                <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-alt: @secondImage.alt;" src="images/image_box_2_placeholder.png" height="180" width="100%" alt="" vspace="0" hspace="0" border="0">
+                                                <br>
+                                                <div class="text" data-ko-editable="secondText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                          </table>
+                          </div>
+                          <div data-ko-block="image_box_3" class="c-image_box c-image_box-size-3">
+                          <table class="grid c-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; background-color: #ffffff; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td class="c-card-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top;" valign="top">
+                                <table class="grid" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; width: 90%; text-align: center; border-collapse: collapse !important;" width="90%" cellpadding="0" cellspacing="0" border="0" align="center">
+                                  <tr>
+                                    <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
+                                          <table class="grid c-image_box-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                              <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 33%;" width="33%">
+                                                <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-alt: @firstImage.alt;" src="images/image_box_3_placeholder.png" height="170" width="100%" alt="" vspace="0" hspace="0" border="0">
+                                                <br>
+                                                <div class="text" data-ko-editable="firstText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
+                                              </td>
+                                      
+                                              <td class="c-image_box-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 10px;" width="10">&nbsp;</td>
+                                      
+                                              <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 33%;" width="33%">
+                                                <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-alt: @secondImage.alt;" src="images/image_box_3_placeholder.png" height="170" width="100%" alt="" vspace="0" hspace="0" border="0">
+                                                <br>
+                                                <div class="text" data-ko-editable="secondText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
+                                              </td>
+                                      
+                                              <td class="c-image_box-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 10px;" width="10">&nbsp;</td>
+                                      
+                                              <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 33%;" width="33%">
+                                                <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-alt: @thirdImage.alt;" src="images/image_box_3_placeholder.png" height="170" width="100%" alt="" vspace="0" hspace="0" border="0">
+                                                <br>
+                                                <div class="text" data-ko-editable="thirdText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                          </table>
+                          </div>
+                          <div data-ko-block="media_box" class="c-media_box">
+                          <table class="grid c-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; background-color: #ffffff; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td class="c-card-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top;" valign="top">
+                                <table class="grid" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; width: 90%; text-align: center; border-collapse: collapse !important;" width="90%" cellpadding="0" cellspacing="0" border="0" align="center">
+                                  <tr>
+                                    <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
+                                          <table class="grid c-media_box-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                              <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 50%;" width="50%">
+                                                <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-height: @height; -ko-attr-alt: @image.alt;" src="images/media_box_placeholder.png" height="180" width="100%" alt="" vspace="0" hspace="0" border="0">
+                                              </td>
+                                      
+                                              <td class="c-media_box-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 20px;" width="20">&nbsp;</td>
+                                      
+                                              <td class="c-media_box-text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top; text-align: left; width: 50%;" width="50%" valign="top" align="left">
+                                                <div class="text" data-ko-editable="text" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Text</div>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                          </table>
+                          </div>
+                          <div data-ko-block="media_box_alternative" class="c-media_box">
+                          <table class="grid c-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; background-color: #ffffff; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+                            <tr>
+                              <td class="grid-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 10px; line-height: 10px; font-size: 10px;" height="10">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td class="c-card-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top;" valign="top">
+                                <table class="grid" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; width: 90%; text-align: center; border-collapse: collapse !important;" width="90%" cellpadding="0" cellspacing="0" border="0" align="center">
+                                  <tr>
+                                    <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
+                                          <table class="grid c-media_box-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                              <td class="c-media_box-text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top; text-align: left; width: 50%;" width="50%" valign="top" align="left">
+                                                <div class="text" data-ko-editable="text" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Text</div>
+                                              </td>
+                                      
+                                              <td class="c-media_box-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 20px;" width="20">&nbsp;</td>
+                                      
+                                              <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 50%;" width="50%">
+                                                <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-height: @height; -ko-attr-alt: @image.alt;" src="images/media_box_placeholder.png" height="180" width="100%" alt="" vspace="0" hspace="0" border="0">
+                                              </td>
+                                            </tr>
+                                          </table>
                                     </td>
                                   </tr>
                                 </table>

@@ -1,0 +1,39 @@
+<div data-ko-block="image_box_2" class="c-image_box c-image_box-size-2">
+  {{#> card}}
+    <table class="grid c-image_box-container">
+      <tr>
+        <td>
+          <img
+            style="-ko-attr-alt: @firstImage.alt"
+            src="{{image_url 'image_box_2_placeholder.png'}}"
+            height="180"
+            width="100%"
+            alt=""
+            vspace="0"
+            hspace="0"
+            border="0"
+          >
+          <br />
+          <div class="text" data-ko-editable="firstText">Optional text</div>
+        </td>
+
+        <td class="c-image_box-space">&nbsp;</td>
+
+        <td>
+          <img
+            style="-ko-attr-alt: @secondImage.alt"
+            src="{{image_url 'image_box_2_placeholder.png'}}"
+            height="180"
+            width="100%"
+            alt=""
+            vspace="0"
+            hspace="0"
+            border="0"
+          >
+          <br />
+          <div class="text" data-ko-editable="secondText">Optional text</div>
+        </td>
+      </tr>
+    </table>
+  {{/card}}
+</div>

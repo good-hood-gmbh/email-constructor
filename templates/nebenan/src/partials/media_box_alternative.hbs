@@ -1,0 +1,26 @@
+<div data-ko-block="media_box_alternative" class="c-media_box">
+  {{#> card}}
+    <table class="grid c-media_box-container">
+      <tr>
+        <td class="c-media_box-text">
+          <div class="text" data-ko-editable="text">Text</div>
+        </td>
+
+        <td class="c-media_box-space">&nbsp;</td>
+
+        <td>
+          <img
+            style="-ko-attr-height: @height; -ko-attr-alt: @image.alt"
+            src="{{image_url 'media_box_placeholder.png'}}"
+            height="180"
+            width="100%"
+            alt=""
+            vspace="0"
+            hspace="0"
+            border="0"
+          >
+        </td>
+      </tr>
+    </table>
+  {{/card}}
+</div>
