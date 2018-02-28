@@ -22,6 +22,7 @@
     <script src="dist/vendor/knockout-jqueryui.min.js"></script>
     <script src="dist/vendor/tinymce.min.js"></script>
 
+    <script src="dist/backendconfig.js"></script>
     <script src="dist/mosaico.min.js?v=0.16"></script>
     <script>
 $(function() {
@@ -29,6 +30,7 @@ $(function() {
     alert('Update your browser!');
     return;
   }
+
   // var basePath = window.location.href.substr(0, window.location.href.lastIndexOf('/')).substr(window.location.href.indexOf('/','https://'.length));
   var basePath = window.location.href;
   if (basePath.lastIndexOf('#') > 0) basePath = basePath.substr(0, basePath.lastIndexOf('#'));
@@ -37,22 +39,50 @@ $(function() {
   var plugins;
   // A basic plugin that expose the "viewModel" object as a global variable.
   // plugins = [function(vm) {window.viewModel = vm;}];
-  var ok = Mosaico.init({
-    imgProcessorBackend: basePath+'/img/',
-    emailProcessorBackend: basePath+'/dl/',
-    titleToken: "MOSAICO Responsive Email Designer",
-    fileuploadConfig: {
-      url: basePath+'/upload/',
-      // messages??
-    }
-  }, plugins);
-  if (!ok) {
-    console.log("Missing initialization hash, redirecting to main entrypoint");
-    document.location = ".";
+  var template_id = window.location.hash ? window.location.href.split("#")[1] : undefined;
+  function isNumber(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n); }
+
+  if (isNumber(template_id)){
+    var getUrl = backendconfig['getTemplateUrlPrefix'] + template_id + ".json";
+    var get = $.get(getUrl,null,(function(foo) {
+      var ok = Mosaico.init({
+        imgProcessorBackend: backendconfig['imgProcessorBackend'],
+        emailProcessorBackend: backendconfig['emailProcessorBackend'],
+        emailProcessorLoader: backendconfig['emailProcessorLoader'],
+        boLink: backendconfig['boLink'],
+        titleToken: "MOSAICO Responsive Email Designer",
+        fileuploadConfig: {
+          url: backendconfig['fileuploadConfigurl'],
+        },
+        template: foo.json,
+        metadata: foo.meta
+      }, plugins);
+      if (!ok) {
+        console.log("Missing initialization hash, redirecting to main entrypoint");
+        document.location = ".";
+      }
+    }),'json');
+  } else {
+      var ok = Mosaico.init({
+        imgProcessorBackend: backendconfig['imgProcessorBackend'],
+        emailProcessorBackend: backendconfig['emailProcessorBackend'],
+        emailProcessorLoader: backendconfig['emailProcessorLoader'],
+        boLink: backendconfig['boLink'],
+        titleToken: "MOSAICO Responsive Email Designer",
+        fileuploadConfig: {
+          url: backendconfig['fileuploadConfigurl'],
+        },
+      }, plugins);
+      if (!ok) {
+        console.log("Missing initialization hash, redirecting to main entrypoint");
+        document.location = ".";
+      }
+
+
   }
 });
     </script>
-    
+
     <link rel="stylesheet" href="dist/mosaico-material.min.css?v=0.10" />
     <link rel="stylesheet" href="dist/vendor/notoregular/stylesheet.css" />
   </head>

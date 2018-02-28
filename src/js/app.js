@@ -15,6 +15,7 @@ var utilPlugin = require("./ext/util.js");
 var inlinerPlugin = require("./ext/inliner.js");
 
 var localStorageLoader = require("./ext/localstorage.js");
+var serverStorageLoader = require("./ext/serverstorage.js");
 
 if (typeof ko == 'undefined') throw "Cannot find knockout.js library!";
 if (typeof $ == 'undefined') throw "Cannot find jquery library!";
@@ -149,12 +150,28 @@ var initFromLocalStorage = function(options, hash_key, customExtensions) {
   }
 };
 
+
+var initFromServerStorage = function(options, template, metadata, customExtensions) {
+  try {
+    var ssData = serverStorageLoader(template, metadata, options.emailProcessorBackend, options.boLink);
+    var extensions = typeof customExtensions !== 'undefined' ? customExtensions : [];
+    extensions.push(ssData.extension);
+    //var template = _canonicalize(ssData.metadata.template);
+    start(options, template, ssData.metadata, ssData.model, extensions);
+  } catch (e) {
+    console.error("TODO not found ", e);
+  }
+};
+
+
 var init = function(options, customExtensions) {
 
   var hash = global.location.hash ? global.location.href.split("#")[1] : undefined;
-
   // Loading from configured template or configured metadata
-  if (options && (options.template || options.data)) {
+  if (options && (options.template && options.metadata)) {
+    initFromServerStorage(options, options.template, options.metadata , customExtensions);
+//      start(options, undefined, options.metadata, options.template, customExtensions);
+  } else if (options && (options.template || options.data)) {
     if (options.data) {
       var data = JSON.parse(options.data);
       start(options, undefined, data.metadata, data.content, customExtensions);
