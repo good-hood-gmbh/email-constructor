@@ -43,14 +43,14 @@ $(function() {
   function isNumber(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n); }
 
   if (isNumber(template_id)){
-    var getUrl = __config__.getTemplateUrlPrefix + template_id + ".json";
+    var getUrl = __config__.getTemplateUrlPrefix + template_id + '.json';
     var get = $.get(getUrl,null,(function(foo) {
       var ok = Mosaico.init({
         imgProcessorBackend: __config__.imgProcessorBackend,
         emailProcessorBackend: __config__.emailProcessorBackend,
         emailProcessorLoader: __config__.emailProcessorLoader,
         boLink: __config__.boLink,
-        titleToken: "MOSAICO Responsive Email Designer",
+        titleToken: __config__.titleToken,
         fileuploadConfig: {
           url: __config__.fileuploadConfigurl,
         },
@@ -68,7 +68,7 @@ $(function() {
         emailProcessorBackend: __config__.emailProcessorBackend,
         emailProcessorLoader: __config__.emailProcessorLoader,
         boLink: __config__.boLink,
-        titleToken: "MOSAICO Responsive Email Designer",
+        titleToken: __config__.titleToken,
         fileuploadConfig: {
           url: __config__.fileuploadConfigurl,
         },
@@ -77,8 +77,6 @@ $(function() {
         console.log("Missing initialization hash, redirecting to main entrypoint");
         document.location = ".";
       }
-
-
   }
 });
     </script>
