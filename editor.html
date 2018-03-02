@@ -45,13 +45,7 @@
           document.location = ".";
         }
 
-        // var basePath = window.location.href.substr(0, window.location.href.lastIndexOf('/')).substr(window.location.href.indexOf('/','https://'.length));
-        var basePath = window.location.href;
-        if (basePath.lastIndexOf('#') > 0) basePath = basePath.substr(0, basePath.lastIndexOf('#'));
-        if (basePath.lastIndexOf('?') > 0) basePath = basePath.substr(0, basePath.lastIndexOf('?'));
-        if (basePath.lastIndexOf('/') > 0) basePath = basePath.substr(0, basePath.lastIndexOf('/'));
-
-        var template_id = window.location.hash ? window.location.href.split("#")[1] : undefined;
+        var template_id = window.location.hash ? window.location.hash.substr(1) : undefined;
 
         const defaultOptions = {
           imgProcessorBackend: __config__.api_root + '/api/newsletter/image_processor.json',
@@ -65,16 +59,16 @@
         };
 
         if (isNumber(template_id)){
-          var getUrl = __config__.api_root + '/api/newsletter/email_processor/' + template_id + '.json';
+          var templateUrl = __config__.api_root + '/api/newsletter/email_processor/' + template_id + '.json';
           function handleRequest(foo) {
-            var ok = Mosaico.init(Object.assign({ template: foo.json, metadata: foo.meta }, defaultOptions));
-            if (!ok) handleError();
+            var result = Mosaico.init(Object.assign({ template: foo.json, metadata: foo.meta }, defaultOptions));
+            if (!result) handleError();
           }
 
-          var get = $.get(getUrl, null, handleRequest,'json');
+          var get = $.get(templateUrl, null, handleRequest,'json');
         } else {
-          var ok = Mosaico.init(defaultOptions);
-          if (!ok) handleError();
+          var result = Mosaico.init(defaultOptions);
+          if (!result) handleError();
         }
       });
     </script>
