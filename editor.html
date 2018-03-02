@@ -22,7 +22,7 @@
     <script src="dist/vendor/knockout-jqueryui.min.js"></script>
     <script src="dist/vendor/tinymce.min.js"></script>
 
-    <script src="dist/backendconfig.js"></script>
+    <script src="dist/config.min.js?v=0.16"></script>
     <script src="dist/mosaico.min.js?v=0.16"></script>
     <script>
 $(function() {
@@ -43,16 +43,16 @@ $(function() {
   function isNumber(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n); }
 
   if (isNumber(template_id)){
-    var getUrl = backendconfig['getTemplateUrlPrefix'] + template_id + ".json";
+    var getUrl = __config__.getTemplateUrlPrefix + template_id + ".json";
     var get = $.get(getUrl,null,(function(foo) {
       var ok = Mosaico.init({
-        imgProcessorBackend: backendconfig['imgProcessorBackend'],
-        emailProcessorBackend: backendconfig['emailProcessorBackend'],
-        emailProcessorLoader: backendconfig['emailProcessorLoader'],
-        boLink: backendconfig['boLink'],
+        imgProcessorBackend: __config__.imgProcessorBackend,
+        emailProcessorBackend: __config__.emailProcessorBackend,
+        emailProcessorLoader: __config__.emailProcessorLoader,
+        boLink: __config__.boLink,
         titleToken: "MOSAICO Responsive Email Designer",
         fileuploadConfig: {
-          url: backendconfig['fileuploadConfigurl'],
+          url: __config__.fileuploadConfigurl,
         },
         template: foo.json,
         metadata: foo.meta
@@ -64,13 +64,13 @@ $(function() {
     }),'json');
   } else {
       var ok = Mosaico.init({
-        imgProcessorBackend: backendconfig['imgProcessorBackend'],
-        emailProcessorBackend: backendconfig['emailProcessorBackend'],
-        emailProcessorLoader: backendconfig['emailProcessorLoader'],
-        boLink: backendconfig['boLink'],
+        imgProcessorBackend: __config__.imgProcessorBackend,
+        emailProcessorBackend: __config__.emailProcessorBackend,
+        emailProcessorLoader: __config__.emailProcessorLoader,
+        boLink: __config__.boLink,
         titleToken: "MOSAICO Responsive Email Designer",
         fileuploadConfig: {
-          url: backendconfig['fileuploadConfigurl'],
+          url: __config__.fileuploadConfigurl,
         },
       }, plugins);
       if (!ok) {

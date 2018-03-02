@@ -67,6 +67,17 @@ module.exports = function(grunt) {
     },
 
     browserify: {
+      config: {
+        options: {
+          browserifyOptions: {
+            standalone: '__config__',
+          },
+          transform: [['browserify-shim', {global: true}], 'uglifyify'],
+        },
+        files: {
+          'build/config.js': ['./src/js/config.js'],
+        },
+      },
       debug: {
         options: {
           browserifyOptions: {
@@ -96,6 +107,14 @@ module.exports = function(grunt) {
     },
 
     exorcise: {
+      config: {
+        options: {
+          bundleDest: 'dist/config.min.js',
+        },
+        files: {
+          'dist/config.min.js.map': ['build/config.js'],
+        },
+      },
       main: {
         options: {
           bundleDest: 'dist/mosaico.min.js'
@@ -177,17 +196,17 @@ module.exports = function(grunt) {
         src: ['plugins/**', 'skins/**', 'themes/**', 'tinymce.min.js'],
         dest: 'dist/vendor/'
       },
-      
+
       knockout: {
         src: 'node_modules/knockout/build/output/knockout-latest.js',
         dest: 'dist/vendor/knockout.js'
       },
-      
+
       jquery: {
         src: 'node_modules/jquery/dist/jquery.min.js',
         dest: 'dist/vendor/jquery.min.js'
       },
-      
+
       jqueryui: {
         expand: true,
         cwd: 'node_modules/jquery-ui-dist',
@@ -199,7 +218,7 @@ module.exports = function(grunt) {
         src: 'node_modules/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js',
         dest: 'dist/vendor/jquery.ui.touch-punch.min.js'
       },
-      
+
       knockoutjqueryui: {
         src: 'node_modules/knockout-jqueryui/dist/knockout-jqueryui.min.js',
         dest: 'dist/vendor/knockout-jqueryui.min.js'
