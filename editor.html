@@ -8,6 +8,10 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
+    <link rel="stylesheet" href="dist/mosaico-material.min.css?v=0.10" />
+    <link rel="stylesheet" href="dist/vendor/notoregular/stylesheet.css" />
+  </head>
+  <body class="mo-standalone">
     <script src="dist/vendor/jquery.min.js"></script>
     <script src="dist/vendor/knockout.js"></script>
     <script src="dist/vendor/jquery-ui.min.js"></script>
@@ -22,72 +26,57 @@
     <script src="dist/vendor/knockout-jqueryui.min.js"></script>
     <script src="dist/vendor/tinymce.min.js"></script>
 
-    <script src="dist/backendconfig.js"></script>
+    <script src="dist/config.min.js?v=0.16"></script>
     <script src="dist/mosaico.min.js?v=0.16"></script>
+
     <script>
-$(function() {
-  if (!Mosaico.isCompatible()) {
-    alert('Update your browser!');
-    return;
-  }
+      $(function() {
+        if (!Mosaico.isCompatible()) {
+          alert('Update your browser!');
+          return;
+        }
 
-  // var basePath = window.location.href.substr(0, window.location.href.lastIndexOf('/')).substr(window.location.href.indexOf('/','https://'.length));
-  var basePath = window.location.href;
-  if (basePath.lastIndexOf('#') > 0) basePath = basePath.substr(0, basePath.lastIndexOf('#'));
-  if (basePath.lastIndexOf('?') > 0) basePath = basePath.substr(0, basePath.lastIndexOf('?'));
-  if (basePath.lastIndexOf('/') > 0) basePath = basePath.substr(0, basePath.lastIndexOf('/'));
-  var plugins;
-  // A basic plugin that expose the "viewModel" object as a global variable.
-  // plugins = [function(vm) {window.viewModel = vm;}];
-  var template_id = window.location.hash ? window.location.href.split("#")[1] : undefined;
-  function isNumber(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n); }
+        function isNumber(n) {
+          return /^-?[\d.]+(?:e-?\d+)?$/.test(n);
+        }
 
-  if (isNumber(template_id)){
-    var getUrl = backendconfig['getTemplateUrlPrefix'] + template_id + ".json";
-    var get = $.get(getUrl,null,(function(foo) {
-      var ok = Mosaico.init({
-        imgProcessorBackend: backendconfig['imgProcessorBackend'],
-        emailProcessorBackend: backendconfig['emailProcessorBackend'],
-        emailProcessorLoader: backendconfig['emailProcessorLoader'],
-        boLink: backendconfig['boLink'],
-        titleToken: "MOSAICO Responsive Email Designer",
-        fileuploadConfig: {
-          url: backendconfig['fileuploadConfigurl'],
-        },
-        template: foo.json,
-        metadata: foo.meta
-      }, plugins);
-      if (!ok) {
-        console.log("Missing initialization hash, redirecting to main entrypoint");
-        document.location = ".";
-      }
-    }),'json');
-  } else {
-      var ok = Mosaico.init({
-        imgProcessorBackend: backendconfig['imgProcessorBackend'],
-        emailProcessorBackend: backendconfig['emailProcessorBackend'],
-        emailProcessorLoader: backendconfig['emailProcessorLoader'],
-        boLink: backendconfig['boLink'],
-        titleToken: "MOSAICO Responsive Email Designer",
-        fileuploadConfig: {
-          url: backendconfig['fileuploadConfigurl'],
-        },
-      }, plugins);
-      if (!ok) {
-        console.log("Missing initialization hash, redirecting to main entrypoint");
-        document.location = ".";
-      }
+        function handleError() {
+          console.log("Missing initialization hash, redirecting to main entrypoint");
+          document.location = ".";
+        }
 
+        // var basePath = window.location.href.substr(0, window.location.href.lastIndexOf('/')).substr(window.location.href.indexOf('/','https://'.length));
+        var basePath = window.location.href;
+        if (basePath.lastIndexOf('#') > 0) basePath = basePath.substr(0, basePath.lastIndexOf('#'));
+        if (basePath.lastIndexOf('?') > 0) basePath = basePath.substr(0, basePath.lastIndexOf('?'));
+        if (basePath.lastIndexOf('/') > 0) basePath = basePath.substr(0, basePath.lastIndexOf('/'));
 
-  }
-});
+        var template_id = window.location.hash ? window.location.href.split("#")[1] : undefined;
+
+        const defaultOptions = {
+          imgProcessorBackend: __config__.api_root + '/api/newsletter/image_processor.json',
+          emailProcessorBackend:  __config__.api_root + '/api/newsletter/email_processor.json',
+          emailProcessorLoader: __config__.api_root + '/api/newsletter/email_processor/',
+          boLink: __config__.api_root + '/nebenadmin/nebenadmin/newsletter_template/',
+          titleToken: __config__.titleToken,
+          fileuploadConfig: {
+            url: __config__.api_root + '/api/newsletter/file_upload.json',
+          },
+        };
+
+        if (isNumber(template_id)){
+          var getUrl = __config__.api_root + '/api/newsletter/email_processor/' + template_id + '.json';
+          function handleRequest(foo) {
+            var ok = Mosaico.init(Object.assign({ template: foo.json, metadata: foo.meta }, defaultOptions));
+            if (!ok) handleError();
+          }
+
+          var get = $.get(getUrl, null, handleRequest,'json');
+        } else {
+          var ok = Mosaico.init(defaultOptions);
+          if (!ok) handleError();
+        }
+      });
     </script>
-
-    <link rel="stylesheet" href="dist/mosaico-material.min.css?v=0.10" />
-    <link rel="stylesheet" href="dist/vendor/notoregular/stylesheet.css" />
-  </head>
-  <body class="mo-standalone">
-
-
   </body>
 </html>
