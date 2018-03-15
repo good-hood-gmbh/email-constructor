@@ -183,7 +183,7 @@ ko.bindingHandlers['fileupload'] = {
   remoteFilePreprocessor: function(url) { return url; },
   init: function(element, valueAccessor) {
     // TODO domnodedisposal doesn't work when the upload is done by "clicking"
-    // Probably jquery-fileupload moves the DOM somewhere else so that KO doesn't 
+    // Probably jquery-fileupload moves the DOM somewhere else so that KO doesn't
     // detect the removal anymore.
     ko.utils.domNodeDisposal.addDisposeCallback(element, function() {
       $(element).fileupload('destroy');
@@ -301,7 +301,9 @@ ko.bindingHandlers['fileupload'] = {
         cleanup();
       }
       if (e.type == 'fileuploaddone') {
-        if (typeof data.result.files[0].url !== 'undefined') {
+        var file = data.result.files[data.result.files.length - 1];
+
+        if (typeof file.url !== 'undefined') {
           if (options.onfile) {
             for (var i = 0; i < data.result.files.length; i++) {
               data.result.files[i] = ko.bindingHandlers['fileupload'].remoteFilePreprocessor(data.result.files[i]);
@@ -309,20 +311,20 @@ ko.bindingHandlers['fileupload'] = {
             }
           }
 
-          if (firstWorked === '') firstWorked = data.result.files[0].url;
+          if (firstWorked === '') firstWorked = file.url;
 
           if (canvasPreview) {
             var img = new Image();
             img.onload = cleanup;
             img.onerror = cleanup;
-            img.src = data.result.files[0].url;
+            img.src = file.url;
           } else {
             cleanup();
           }
-        } else if (typeof data.result.files[0].error !== 'undefined') {
+        } else if (typeof file.error !== 'undefined') {
           console.log("remote error", e, data);
           if (options.onerror) {
-            options.onerror(translatedMessage(data.result.files[0].error));
+            options.onerror(translatedMessage(file.error));
           }
           cleanup();
         } else {
@@ -334,13 +336,13 @@ ko.bindingHandlers['fileupload'] = {
         }
       }
       if (e.type == 'fileuploadprocessalways') {
-        var index = data.index,
-          file = data.files[index];
-        if (file.preview && index === 0) {
+        var index = data.index;
+        var _file = data.files[index];
+        if (_file.preview && index === 0) {
           // if we have a canvas we had multiple uploaded files
           if ($parent.find('canvas').length === 0) {
             if (canvasPreview) {
-              var el = $(file.preview).css('width', '100%'); // .css('position', 'absolute').css('left', '0');
+              var el = $(_file.preview).css('width', '100%'); // .css('position', 'absolute').css('left', '0');
               $parent.find('img').hide();
               $parent.prepend(el);
             }
@@ -348,11 +350,11 @@ ko.bindingHandlers['fileupload'] = {
             $parent.find('.progress-bar').css('width', 0);
           }
         }
-        if (file.error) {
+        if (_file.error) {
           // File type not allowed
           // File is too large
           if (options.onerror) {
-            options.onerror(translatedMessage(file.error));
+            options.onerror(translatedMessage(_file.error));
           }
           cleanup();
         }
