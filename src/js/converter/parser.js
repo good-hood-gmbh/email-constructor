@@ -226,8 +226,11 @@ var processBlock = function(element, defs, themeUpdater, blockPusher, templateUr
         console.error("ERROR: data-ko-editable images must declare a WIDTH attribute!", element);
         throw "ERROR: data-ko-editable images must declare a WIDTH attribute!";
       }
+      if (!Number.isInteger(width)) width = "'" + width + "'";
+
       var height = domutils.getAttribute(element, 'height');
       if (height === '') height = null;
+      if (!Number.isInteger(height)) height = "'" + height + "'";
 
       var align = domutils.getAttribute(element, 'align');
 
