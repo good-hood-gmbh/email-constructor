@@ -96,11 +96,14 @@
     "gulp": "3.9.1",
     "gulp-watch": "5.0.0",
     "run-sequence": "2.2.1",
-    "handlebars": "4.0.11"
+    "handlebars": "4.0.11",
+    "envify": "4.1.0"
   },
   "author": "Stefano Bagnara",
   "license": "GPL-3.0",
   "scripts": {
+    "start": "grunt",
+    "production": "NODE_ENV=production grunt",
     "test": "grunt jasmine_node"
   },
   "engine": "node >= 6.0.0"

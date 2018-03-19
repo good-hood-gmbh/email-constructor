@@ -1,3 +1,4 @@
+/* jshint node: true */
 "use strict";
 var path = require('path');
 
@@ -72,7 +73,10 @@ module.exports = function(grunt) {
           browserifyOptions: {
             standalone: '__config__',
           },
-          transform: [['browserify-shim', {global: true}], 'uglifyify'],
+          transform: [
+            ['browserify-shim', {global: true}],
+            ['envify', { NODE_ENV: process.env.NODE_ENV || 'development' }]
+          ],
         },
         files: {
           'build/config.js': ['./src/js/config.js'],
