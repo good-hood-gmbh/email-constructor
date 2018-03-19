@@ -57,6 +57,7 @@ var applyBindingOptions = function(options, ko) {
   };
 
   ko.bindingHandlers.wysiwygSrc.placeholderUrl = function(width, height, text) {
+    console.warn(arguments);
     var imgProcessorBackend = options.imgProcessorBackend ? options.imgProcessorBackend : './upload';
     return _appendUrlParameters(imgProcessorBackend, { method: 'placeholder', params: width + "," + height });
   };

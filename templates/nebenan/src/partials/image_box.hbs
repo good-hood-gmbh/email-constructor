@@ -1,10 +1,10 @@
 <div data-ko-block="image_box" class="c-image_box">
   {{#> card}}
     <img
-      style="-ko-attr-alt: @image.alt; -ko-attr-height: @height"
+      style="-ko-attr-alt: @image.alt;"
       data-ko-editable="image.src"
-      src=""
-      height="200"
+      src="{{local_image_url 'image_box_placeholder.png'}}"
+      height="auto"
       width="100%"
       vspace="0"
       hspace="0"

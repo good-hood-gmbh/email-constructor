@@ -18,7 +18,8 @@ juice.styleToAttribute = {
 };
 
 const helpers = {
-  image_url: (image) => (`${config.static_root}/newsletter_assets/${image}`),
+  local_image_url: (image) => `images/${image}`,
+  image_url: (image) => `${config.static_root}/newsletter_assets/${image}`,
 };
 
 
