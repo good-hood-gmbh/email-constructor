@@ -102,8 +102,8 @@
   "author": "Stefano Bagnara",
   "license": "GPL-3.0",
   "scripts": {
-    "start": "grunt",
-    "production": "NODE_ENV=production grunt",
+    "start": "node_modules/grunt/bin/grunt",
+    "production": "NODE_ENV=production node_modules/grunt/bin/grunt",
     "test": "grunt jasmine_node"
   },
   "engine": "node >= 6.0.0"
