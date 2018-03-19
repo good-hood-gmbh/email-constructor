@@ -75,7 +75,8 @@ module.exports = function(grunt) {
           },
           transform: [
             ['browserify-shim', {global: true}],
-            ['envify', { NODE_ENV: process.env.NODE_ENV || 'development' }]
+            ['envify', { NODE_ENV: process.env.NODE_ENV || 'development' }],
+            'uglifyify',
           ],
         },
         files: {
