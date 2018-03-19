@@ -9,3 +9,8 @@
 .c-image_box .c-image_box-container .c-image_box-space {
   width: 10px;
 }
+
+.c-image_box-content {
+  vertical-align: top;
+  text-align: left;
+}

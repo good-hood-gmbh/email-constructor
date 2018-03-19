@@ -375,6 +375,11 @@ body,
   width: 10px;
 }
 
+.c-image_box-content {
+  vertical-align: top;
+  text-align: left;
+}
+
 </style>
     <style>
 .c-media_box-container td {
@@ -440,6 +445,11 @@ body,
           label: Alternative Text;
           widget: text;
           help: Alternative text will be shown on email clients that does not download image automatically;
+        }
+    
+        showText {
+          label: Show text;
+          widget: boolean;
         }
     
         image {
@@ -801,7 +811,9 @@ body,
                                     <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
                                           <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-alt: @image.alt;" data-ko-editable="image.src" src="images/image_box_placeholder.png" height="auto" width="100%" vspace="0" hspace="0" border="0">
                                           <br>
-                                          <div class="text" data-ko-editable="text" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
+                                          <div class="text" data-ko-editable="text" data-ko-display="showText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">
+                                            Optional text
+                                          </div>
                                     </td>
                                   </tr>
                                 </table>
@@ -824,18 +836,18 @@ body,
                                     <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
                                           <table class="grid c-image_box-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0">
                                             <tr>
-                                              <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 50%;" width="50%">
+                                              <td class="c-image_box-content" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top; text-align: left; width: 50%;" width="50%" valign="top" align="left">
                                                 <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-alt: @firstImage.alt;" data-ko-editable="firstImage.src" src="images/image_box_2_placeholder.png" height="auto" width="100%" vspace="0" hspace="0" border="0">
                                                 <br>
-                                                <div class="text" data-ko-editable="firstText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
+                                                <div class="text" data-ko-editable="firstText" data-ko-display="firstShowText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
                                               </td>
                                       
                                               <td class="c-image_box-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 10px;" width="10">&nbsp;</td>
                                       
-                                              <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 50%;" width="50%">
+                                              <td class="c-image_box-content" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top; text-align: left; width: 50%;" width="50%" valign="top" align="left">
                                                 <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-alt: @secondImage.alt;" data-ko-editable="secondImage.src" src="images/image_box_2_placeholder.png" height="auto" width="100%" vspace="0" hspace="0" border="0">
                                                 <br>
-                                                <div class="text" data-ko-editable="secondText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
+                                                <div class="text" data-ko-editable="secondText" data-ko-display="secondShowText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
                                               </td>
                                             </tr>
                                           </table>
@@ -861,26 +873,26 @@ body,
                                     <td class="c-card-content text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575; text-align: left; vertical-align: top;" align="left" valign="top">
                                           <table class="grid c-image_box-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; cellpadding: 0; cellspacing: 0; table-layout: fixed; border: 0; border-collapse: collapse !important;" width="100%" cellpadding="0" cellspacing="0" border="0">
                                             <tr>
-                                              <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 33%;" width="33%">
+                                              <td class="c-image_box-content" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top; text-align: left; width: 33%;" width="33%" valign="top" align="left">
                                                 <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-alt: @firstImage.alt;" data-ko-editable="firstImage.src" src="images/image_box_3_placeholder.png" height="auto" width="100%" vspace="0" hspace="0" border="0">
                                                 <br>
-                                                <div class="text" data-ko-editable="firstText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
+                                                <div class="text" data-ko-editable="firstText" data-ko-display="firstShowText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
                                               </td>
                                       
                                               <td class="c-image_box-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 10px;" width="10">&nbsp;</td>
                                       
-                                              <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 33%;" width="33%">
+                                              <td class="c-image_box-content" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top; text-align: left; width: 33%;" width="33%" valign="top" align="left">
                                                 <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-alt: @secondImage.alt;" data-ko-editable="secondImage.src" src="images/image_box_3_placeholder.png" height="auto" width="100%" vspace="0" hspace="0" border="0">
                                                 <br>
-                                                <div class="text" data-ko-editable="secondText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
+                                                <div class="text" data-ko-editable="secondText" data-ko-display="secondShowText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
                                               </td>
                                       
                                               <td class="c-image_box-space" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 10px;" width="10">&nbsp;</td>
                                       
-                                              <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 33%;" width="33%">
+                                              <td class="c-image_box-content" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; vertical-align: top; text-align: left; width: 33%;" width="33%" valign="top" align="left">
                                                 <img style="-ms-interpolation-mode: bicubic; outline: none; text-decoration: none; margin: 0; padding: 0; border: none; display: block; -ko-attr-alt: @thirdImage.alt;" data-ko-editable="thirdImage.src" src="images/image_box_3_placeholder.png" height="auto" width="100%" vspace="0" hspace="0" border="0">
                                                 <br>
-                                                <div class="text" data-ko-editable="thirdText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
+                                                <div class="text" data-ko-editable="thirdText" data-ko-display="thirdShowText" style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #757575;">Optional text</div>
                                               </td>
                                             </tr>
                                           </table>
