@@ -65,6 +65,9 @@ gulp.task('juicify', (done) => {
   const options = {
     preserveImportant: true,
     removeStyleTags: false,
+    webResources: {
+      images: false,
+    },
   };
 
   juice.juiceFile(`${TEMPLATE_DIR}/template-nebenan.html`, options, (err, html) => {
