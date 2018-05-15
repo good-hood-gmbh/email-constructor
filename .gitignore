@@ -6,5 +6,6 @@ uploads/**
 !.tmp/README.md
 build
 dist
+config/local.json
 # Mac finder artifacts
 .DS_Store

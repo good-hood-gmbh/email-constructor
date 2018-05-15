@@ -55,7 +55,8 @@
     "slick": "github:kamicane/slick#v1.12.2",
     "tinycolor2": "github:bgrins/TinyColor#1.4.1",
     "tinymce": "^4.7.6",
-    "toastr": "^2.1.4"
+    "toastr": "^2.1.4",
+    "config-browserify": "1.0.5"
   },
   "devDependencies": {
     "aliasify": "2.1.0",

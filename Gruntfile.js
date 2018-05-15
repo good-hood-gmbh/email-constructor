@@ -74,14 +74,12 @@ module.exports = function(grunt) {
             standalone: '__config__',
           },
           transform: [
-            ['browserify-shim', {global: true}],
-            ['envify', { NODE_ENV: process.env.NODE_ENV || 'development' }],
-            'uglifyify',
+            'config-browserify',
+            ['browserify-shim', {global: true}]
           ],
         },
-        files: {
-          'build/config.js': ['./src/js/config.js'],
-        },
+        src: 'src/js/config.js',
+        dest: 'build/config.js',
       },
       debug: {
         options: {
