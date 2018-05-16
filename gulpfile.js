@@ -5,11 +5,11 @@ const watch = require('gulp-watch');
 const sequence = require('run-sequence');
 const handlebars = require('handlebars');
 const juice = require('juice');
-const config = require('./src/js/config')
+const config = require('config')
 
 
 const TEMPLATE_DIR = `${__dirname}/templates/nebenan`
-
+console.warn(config.get('Client'))
 juice.styleToAttribute = {
   ...juice.styleToAttribute,
   border: 'border',
@@ -19,7 +19,7 @@ juice.styleToAttribute = {
 
 const helpers = {
   local_image_url: (image) => `images/${image}`,
-  image_url: (image) => `${config.static_root}/newsletter_assets/${image}`,
+  image_url: (image) => `${config.get('Client').static_root}/newsletter_assets/${image}`,
 };
 
 
