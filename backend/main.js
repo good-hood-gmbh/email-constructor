@@ -13,14 +13,16 @@ var config = require('../server-config.js');
 var extend = require('util')._extend;
 var url = require('url');
 
-app.use(require('connect-livereload')({ ignore: [/^\/dl/, /^\/img/] }));
-// app.use(require('morgan')('dev'));
+if (process.env.NODE_ENV !== 'production') {
+  app.use(require('connect-livereload')({ ignore: [/^\/dl/, /^\/img/] }));
+  app.use(require('morgan')('dev'));
+}
 
 app.use(bodyParser.json({limit: '5mb'}));
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   limit: '5mb',
   extended: true
-})); 
+}));
 
 var listFiles = function (req, options, callback) {
 
@@ -55,7 +57,7 @@ var listFiles = function (req, options, callback) {
         }, this);
         finish();
     }, this));
-}; 
+};
 
 var uploadOptions = {
   tmpDir: '.tmp',
@@ -67,7 +69,7 @@ var uploadOptions = {
 app.get('/upload/', function(req, res) {
     listFiles(req, uploadOptions, function (files) {
       res.json({ files: files });
-    }); 
+    });
 });
 
 app.use('/upload/', upload.fileHandler(uploadOptions));
@@ -120,7 +122,7 @@ app.get('/img/', function(req, res) {
 
 app.post('/dl/', function(req, res) {
     var response = function(source) {
-        
+
         if (req.body.action == 'download') {
             res.setHeader('Content-disposition', 'attachment; filename=' + req.body.filename);
             res.setHeader('Content-type', 'text/html');
@@ -147,7 +149,7 @@ app.post('/dl/', function(req, res) {
                 }
             });
         }
-        
+
     };
 
     response(req.body.html);
