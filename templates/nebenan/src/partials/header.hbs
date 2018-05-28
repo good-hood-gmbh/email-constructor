@@ -3,16 +3,10 @@
     <table class="grid">
       <tr>
         <td class="c-header-logo">
-          <img data-ko-display="locale eq 1" src="{{image_url 'logo_de_de.png'}}" alt="logo" border="0" width="auto" height="44" />
-          <img data-ko-display="locale eq 2" src="{{image_url 'logo_fr_fr.png'}}" alt="logo" border="0" width="auto" height="44" />
-          <img data-ko-display="locale eq 3" src="{{image_url 'logo_it_it.png'}}" alt="logo" border="0" width="auto" height="44" />
-          <img data-ko-display="locale eq 4" src="{{image_url 'logo_es_es.png'}}" alt="logo" border="0" width="auto" height="44" />
+          <img src="{{i18n_image_url 'logo.png'}}" alt="logo" border="0" width="auto" height="44" />
         </td>
         <td class="c-header-label text">
-          <span data-ko-display="locale eq 1">Neues von <span>nebenan</span>.de</span>
-          <span data-ko-display="locale eq 2">Dernières nouvelles de <span>mesvoisins</span>.fr</span>
-          <span data-ko-display="locale eq 3">Ultime novità di <span>vicinimiei</span>.it</span>
-          <span data-ko-display="locale eq 4">Últimas noticias de <span>¿Tienes sal?</span></span>
+          {{{t 'header'}}}
         </td>
       </tr>
     </table>

@@ -4,8 +4,14 @@ uploads/**
 !uploads/README.md
 .tmp/**
 !.tmp/README.md
+
+# Build
 build
 dist
+templates/nebenan/template-nebenan.html
+
+# Config
 config/local.json
+
 # Mac finder artifacts
 .DS_Store

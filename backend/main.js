@@ -15,7 +15,6 @@ var url = require('url');
 
 if (process.env.NODE_ENV !== 'production') {
   app.use(require('connect-livereload')({ ignore: [/^\/dl/, /^\/img/] }));
-  app.use(require('morgan')('dev'));
 }
 
 app.use(bodyParser.json({limit: '5mb'}));
