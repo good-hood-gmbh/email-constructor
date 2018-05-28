@@ -1,7 +1,6 @@
 const { parse } = require('path');
 const { readdirSync, readFileSync, writeFile } = require('fs');
 const gulp = require('gulp');
-const watch = require('gulp-watch');
 const sequence = require('run-sequence');
 const handlebars = require('handlebars');
 const juice = require('juice');
@@ -88,7 +87,7 @@ gulp.task('watch', () => {
     `${TEMPLATE_DIR}/src/styles/**/*.css`,
   ];
 
-  watch(list, triggerTaskAction('build'));
+  require('gulp-watch')(list, triggerTaskAction('build'));
 });
 
 gulp.task('build', (done) => {
