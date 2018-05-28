@@ -6,10 +6,13 @@ const sequence = require('run-sequence');
 const handlebars = require('handlebars');
 const juice = require('juice');
 const config = require('config')
+const dictionary = require(`./i18n/${config.get('Client').locale}`);
 
 
-const TEMPLATE_DIR = `${__dirname}/templates/nebenan`
-console.warn(config.get('Client'))
+const TEMPLATE_DIR = `${__dirname}/templates/nebenan`;
+const EXT_REGEXP = /\.([a-z]+)$/;
+const LOCALE_POSTFIX = config.get('Client').locale.toLowerCase().replace('-', '_');
+
 juice.styleToAttribute = {
   ...juice.styleToAttribute,
   border: 'border',
@@ -20,6 +23,9 @@ juice.styleToAttribute = {
 const helpers = {
   local_image_url: (image) => `images/${image}`,
   image_url: (image) => `${config.get('Client').static_root}/newsletter_assets/${image}`,
+  i18n_image_url: (image) => helpers.image_url(image.replace(EXT_REGEXP, `_${LOCALE_POSTFIX}.$1`)),
+  config: (key) => config.get('Client')[key],
+  t: (key) => dictionary[key],
 };
 
 
