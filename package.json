@@ -103,7 +103,7 @@
   "license": "GPL-3.0",
   "scripts": {
     "start": "gulp & grunt",
-    "production": "NODE_ENV=production gulp build && NODE_ENV=production grunt build && NODE_ENV=production node backend/main.js",
+    "production": "NODE_ENV=production node_modules/gulp/bin/gulp.js build && NODE_ENV=production node_modules/grunt/bin/grunt build && NODE_ENV=production node backend/main.js",
     "test": "grunt jasmine_node"
   },
   "engine": "node >= 6.0.0"
