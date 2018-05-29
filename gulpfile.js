@@ -21,7 +21,7 @@ juice.styleToAttribute = {
 
 const helpers = {
   local_image_url: (image) => `images/${image}`,
-  image_url: (image) => `${config.get('Client').static_root}/newsletter_assets/${image}`,
+  image_url: (image) => `${config.get('Client').static_root}/${image}`,
   i18n_image_url: (image) => helpers.image_url(image.replace(EXT_REGEXP, `_${LOCALE_POSTFIX}.$1`)),
   config: (key) => config.get('Client')[key],
   t: (key) => dictionary[key],
