@@ -285,10 +285,37 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('js', ['combineKOTemplates', 'browserify', 'exorcise']);
-  grunt.registerTask('css', ['less', 'postcss']);
-  grunt.registerTask('server', ['express', 'watch', 'keepalive']);
-  grunt.registerTask('build', ['googlefonts', 'copy', 'jshint', 'js', 'css']);
-  grunt.registerTask('default', ['build', 'server']);
+  grunt.registerTask('build', [
+    'googlefonts',
+    'copy',
+    'jshint',
+
+    'combineKOTemplates',
+    'browserify:config',
+    'browserify:main',
+    'exorcise',
+
+    'less',
+    'postcss',
+  ]);
+
+  grunt.registerTask('default', [
+    'googlefonts',
+    'copy',
+    'jshint',
+
+    'combineKOTemplates',
+    'browserify:config',
+    'browserify:debug',
+    'exorcise',
+
+    'less',
+    'postcss',
+
+    'express',
+    'watch',
+    'keepalive',
+  ]);
+
   grunt.registerTask('test', ['jasmine_node']);
 };
