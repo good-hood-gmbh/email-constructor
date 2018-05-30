@@ -5,8 +5,8 @@ module.exports = function(grunt) {
   grunt.registerMultiTask("combineKOTemplates", function() {
     var files = grunt.file.expand(this.data.src),
         result = "";
- 
-    var script = this.data.templateSystemPath || '../src/js/bindings/choose-template.js';
+
+    var script = this.data.templateSystemPath || __dirname + '/../src/js/bindings/choose-template.js';
 
     result += "var templateSystem = require('"+script+"');\n";
     result += "document.addEventListener('DOMContentLoaded', function(event) {\n";
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         result += "templateSystem.addTemplate(\"" + name + "\", \"" + escapedContents + "\");\n";
     });
     result += "});\n";
- 
+
     grunt.file.write(this.data.dest, result);
   });
 };
