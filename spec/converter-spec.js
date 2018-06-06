@@ -4,7 +4,7 @@
 
 var mockery = require('mockery');
 mockery.enable();
-mockery.registerAllowables(['../src/js/converter/declarations.js', 'console', './utils.js', './domutils.js', 'console', '../bower_components/mensch']);
+mockery.registerAllowables(['../client/js/converter/declarations.js', 'console', './utils.js', './domutils.js', 'console', '../bower_components/mensch']);
 
 /*
 var cheerio = require('cheerio');
@@ -22,7 +22,7 @@ mockery.registerMock('mensch/lib/parser.js', function() {
   var parse = require('../bower_components/mensch').parse;
   return parse.apply(parse, arguments);
 });
-var elaborateDeclarations = require('../src/js/converter/declarations.js');
+var elaborateDeclarations = require('../client/js/converter/declarations.js');
 
 var mockedBindingProvider = function(a, b) {
   // console.log("binding provider for", a, b);
@@ -36,8 +36,8 @@ var templateUrlConverter = function(url) {
 describe('Template converter', function() {
 
   it('should handle basic template conversion', function() {
-    var modelDef = require('../src/js/converter/model.js');
-    var translateTemplate = require('../src/js/converter/parser.js');
+    var modelDef = require('../client/js/converter/model.js');
+    var translateTemplate = require('../client/js/converter/parser.js');
     var templates = [];
     var $ = require('jquery');
     var myTemplateCreator = function(htmlOrElement, optionalName, templateMode) {
@@ -83,8 +83,8 @@ describe('Template converter', function() {
   });
 
   it('should handle versafix-1 template conversion', function() {
-    var modelDef = require('../src/js/converter/model.js');
-    var translateTemplate = require('../src/js/converter/parser.js');
+    var modelDef = require('../client/js/converter/model.js');
+    var translateTemplate = require('../client/js/converter/parser.js');
     var templates = [];
     var $ = require('jquery');
     var myTemplateCreator = function(htmlOrElement, optionalName, templateMode) {

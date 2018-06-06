@@ -3,7 +3,7 @@
 
 var mockery = require('mockery');
 mockery.enable();
-mockery.registerAllowables(['../src/js/converter/declarations.js', 'console', './utils.js', './domutils.js', 'console', '../bower_components/mensch']);
+mockery.registerAllowables(['../client/js/converter/declarations.js', 'console', './utils.js', './domutils.js', 'console', '../bower_components/mensch']);
 var currentDocument;
 mockery.registerMock('jquery', function() {
   return currentDocument.apply(currentDocument, arguments);
@@ -13,7 +13,7 @@ mockery.registerMock('mensch/lib/parser.js', function() {
   return parse.apply(parse, arguments);
 });
 
-var utils = require('../src/js/converter/utils.js');
+var utils = require('../client/js/converter/utils.js');
 
 
 describe('Mensch parser', function() {

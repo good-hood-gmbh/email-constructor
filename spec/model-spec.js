@@ -74,7 +74,7 @@ describe('Model generator', function() {
         }
       });
 
-      var utils = require('../src/js/converter/utils.js');
+      var utils = require('../client/js/converter/utils.js');
 
       var replacedText = styleText;
       replacedText = utils.removeStyle(replacedText, styleSheet.stylesheet.rules[1].position.start, styleSheet.stylesheet.rules[1].position.end, 0, 0, 0, 'CCC');

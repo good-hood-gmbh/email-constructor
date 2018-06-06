@@ -2,7 +2,7 @@
   "name": "mosaico",
   "version": "0.16.0",
   "description": "Free Email Template Editor",
-  "main": "./src/js/app.js",
+  "main": "./client/js/app.js",
   "directories": {
     "test": "test"
   },
