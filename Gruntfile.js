@@ -107,7 +107,6 @@ module.exports = function(grunt) {
             ['browserify-shim', {global: true}],
             'uglifyify',
           ],
-          cacheFile: 'build/main-incremental.bin',
         },
         files: {
           'build/mosaico.debug.js': ['./src/js/app.js', './build/templates.js']
