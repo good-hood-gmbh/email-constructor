@@ -3,7 +3,7 @@
 
 var mockery = require('mockery');
 mockery.enable();
-mockery.registerAllowables(['../src/js/converter/declarations.js', 'console', './utils.js', './domutils.js', 'console', '../bower_components/mensch'])
+mockery.registerAllowables(['../client/js/converter/declarations.js', 'console', './utils.js', './domutils.js', 'console', '../bower_components/mensch'])
 
 mockery.registerMock('jquery', require('cheerio'));
 
@@ -11,7 +11,7 @@ mockery.registerMock('mensch/lib/parser.js', function() {
   var parse = require('../bower_components/mensch').parse;
   return parse.apply(parse, arguments);
 });
-var processStylesheetRules = require('../src/js/converter/stylesheet.js');
+var processStylesheetRules = require('../client/js/converter/stylesheet.js');
 
 var mockedWithBindingProvider = function(x, y, a, b) {
   return "$" + x + '.' + a + "[" + b + "]";

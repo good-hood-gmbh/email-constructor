@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 
     combineKOTemplates: {
       main: {
-        src: "src/tmpl/*.tmpl.html",
+        src: "client/tmpl/*.tmpl.html",
         dest: "build/templates.js"
       }
     },
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
     jshint: {
       all: [
         'Gruntfile.js',
-        'src/**/*.js',
+        'client/**/*.js',
       ],
       options: {
         reporter: require('jshint-stylish'),
@@ -38,8 +38,8 @@ module.exports = function(grunt) {
       },
       css: {
         files: {
-          "build/mosaico.css": "src/css/app_standalone.less",
-          "build/mosaico-material.css": "src/css/app_standalone_material.less"
+          "build/mosaico.css": "client/css/app_standalone.less",
+          "build/mosaico-material.css": "client/css/app_standalone_material.less"
         }
       }
     },
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
             'uglifyify',
           ],
         },
-        src: 'src/js/config.js',
+        src: 'client/js/config.js',
         dest: 'build/config.js',
       },
       debug: {
@@ -93,7 +93,7 @@ module.exports = function(grunt) {
           cacheFile: 'build/debug-incremental.bin',
         },
         files: {
-          'build/mosaico.js': ['./src/js/app.js', './build/templates.js']
+          'build/mosaico.js': ['./client/js/app.js', './build/templates.js']
         }
       },
       main: {
@@ -109,7 +109,7 @@ module.exports = function(grunt) {
           ],
         },
         files: {
-          'build/mosaico.debug.js': ['./src/js/app.js', './build/templates.js']
+          'build/mosaico.debug.js': ['./client/js/app.js', './build/templates.js']
         }
       }
     },
@@ -135,15 +135,15 @@ module.exports = function(grunt) {
 
     watch: {
       css: {
-        files: ['src/css/*.less', 'src/**/*.css'],
+        files: ['client/css/*.less', 'client/**/*.css'],
         tasks: ['less', 'postcss']
       },
       tmpl: {
-        files: ['src/tmpl/*.tmpl.html'],
+        files: ['client/tmpl/*.tmpl.html'],
         tasks: ['combineKOTemplates']
       },
       browserify: {
-        files: ['src/js/**/*.js', 'build/templates.js'],
+        files: ['client/js/**/*.js', 'build/templates.js'],
         tasks: ['browserify', 'exorcise']
       },
       exorcise: {
@@ -157,7 +157,7 @@ module.exports = function(grunt) {
         files: ['*.html', 'dist/**/*.js', 'dist/**/*.css'],
       },
       jshint: {
-        files: ['src/js/**/*.js'],
+        files: ['client/js/**/*.js'],
         tasks: ['newer:jshint']
       }
     },
@@ -278,7 +278,7 @@ module.exports = function(grunt) {
             }
           }
         },
-        src: ['src/**/*.js']
+        src: ['client/**/*.js']
       }
     },
 
