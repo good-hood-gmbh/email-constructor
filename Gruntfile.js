@@ -306,6 +306,8 @@ module.exports = function(grunt) {
     'combineKOTemplates',
     'browserify:config',
     'browserify:debug',
+    'browserify:main',
+    'exorcise',
 
     'less',
     'postcss',
