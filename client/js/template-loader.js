@@ -121,6 +121,10 @@ function _viewModelPluginInstance(pluginFunction) {
 }
 
 var _templateUrlConverter = function(basePath, url) {
+  if (url === '{{tracking_url}}') {
+    return url;
+  }
+
   if (!url.match(/^[^\/]*:/) && !url.match(/^\//) && !url.match(/^\[/) && !url.match(/^#?$/)) {
     // TODO this could be smarter joining the urls...
     return basePath + url;
