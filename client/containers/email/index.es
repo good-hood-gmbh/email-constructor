@@ -5,6 +5,7 @@ import items from './items';
 
 import Layout from '../../components/layout';
 import Selector from './components/selector';
+import Preview from './components/preview';
 
 
 class Email extends PureComponent {
@@ -26,10 +27,12 @@ class Email extends PureComponent {
   }
 
   render() {
-    console.warn(this.state);
+    const { meta } = this.state;
+
     return (
       <Layout>
         <Selector items={items} onSelect={this.handleSelect} />
+        <Preview items={items} meta={meta} />
       </Layout>
     );
   }
