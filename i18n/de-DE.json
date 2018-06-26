@@ -1,3 +1,16 @@
 {
-  "header": "Neues von <span>nebenan</span>.de"
+  "error_404": {
+    "title": "Ошибка 404",
+    "link_home": "На главную"
+  },
+
+  "error_500": {
+    "title": "Ошибка 500",
+    "link_home": "На главную"
+  },
+
+  "error_js": {
+    "title": "Ошибка браузера",
+    "text": "Перезагрузите страницу"
+  }
 }
