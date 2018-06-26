@@ -6,7 +6,8 @@
   "plugins": [
     ["transform-runtime", { "polyfill": false, "regenerator": false, "helpers": true  }],
     "babel-plugin-transform-object-rest-spread",
-    "syntax-trailing-function-commas"
+    "syntax-trailing-function-commas",
+    "add-react-displayname"
   ],
   "env": {
     "development": {
