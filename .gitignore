@@ -1,17 +1,17 @@
-bower_components
-node_modules
-uploads/**
-!uploads/README.md
-.tmp/**
-!.tmp/README.md
+# Dependency directory
+/node_modules
 
-# Build
-build
-dist
-templates/nebenan/template-nebenan.html
+# Users Environment Variables
+/.idea/*
 
-# Config
-config/local.json
-
-# Mac finder artifacts
+# MacOS bullshit
 .DS_Store
+
+# Local config
+config/local.*
+
+# Website
+public/assets/*
+
+# Build files
+*bundle-cache.json

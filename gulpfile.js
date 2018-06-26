@@ -1,107 +1,113 @@
-const { parse } = require('path');
-const { readdirSync, readFileSync, writeFile } = require('fs');
+const config = require('uni-config');
 const gulp = require('gulp');
+const del = require('del');
 const sequence = require('run-sequence');
-const handlebars = require('handlebars');
-const juice = require('juice');
-const config = require('config')
-const dictionary = require(`./i18n/${config.get('Client').locale}`);
+const bundle = require('./build/bundle');
+const styles = require('./build/styles');
+const i18n = require('./build/i18n');
+const uglify = require('./build/uglify');
+const cleancss = require('./build/cleancss');
+const revision = require('./build/revision');
+const gzip = require('./build/gzip');
 
 
-const TEMPLATE_DIR = `${__dirname}/templates/nebenan`;
-const EXT_REGEXP = /\.([a-z]+)$/;
-const LOCALE_POSTFIX = config.get('Client').locale.toLowerCase().replace('-', '_');
+const ASSETS = config.build.assets_location;
 
-juice.styleToAttribute = {
-  ...juice.styleToAttribute,
-  border: 'border',
-  cellpadding: 'cellpadding',
-  cellspacing: 'cellspacing',
-};
-
-const helpers = {
-  local_image_url: (image) => `images/${image}`,
-  image_url: (image) => `${config.get('Client').static_root}/${image}`,
-  i18n_image_url: (image) => helpers.image_url(image.replace(EXT_REGEXP, `_${LOCALE_POSTFIX}.$1`)),
-  config: (key) => config.get('Client')[key],
-  t: (key) => dictionary[key],
-};
-
-
-// Utils
-const readTemplate = (name) => readFileSync(`${TEMPLATE_DIR}/src/${name}`, { encoding: 'utf8' });
-const writeTemplate = (name, html, callback) => writeFile(`${TEMPLATE_DIR}/${name}`, html, callback);
-
-const registerPartials = () => {
-  const files = readdirSync(`${TEMPLATE_DIR}/src/partials`);
-  files.forEach((file) => {
-    const { name } = parse(file);
-    handlebars.registerPartial(name, readTemplate(`partials/${file}`));
-  });
-};
-
-const registerHelpers = () => {
-  Object.keys(helpers).forEach((key) => {
-    handlebars.registerHelper(key, helpers[key])
-  });
-};
-
-const pathNormalize = (path) => (path.replace(`${__dirname}/../`, ''));
-const triggerTaskAction = (task) => (
-  (event) => {
-    console.info(`File ${pathNormalize(event.path)} was changed`);
-    gulp.start(task);
-  }
-);
-
-
-// Init
-registerHelpers();
-
-
-// Tasks
-gulp.task('compile', (done) => {
-  registerPartials();
-  const html = handlebars.compile(readTemplate('index.hbs'))();
-  writeTemplate('template-nebenan.html', html, done);
+gulp.task('bundle', (done) => {
+  bundle({
+    name: 'app.js',
+    entries: `${__dirname}/client/index.es`,
+    cacheFile: `${__dirname}/bundle-cache.json`,
+    dest: ASSETS,
+  }, done);
 });
 
-gulp.task('juicify', (done) => {
-  const options = {
-    preserveImportant: true,
-    removeStyleTags: false,
-    webResources: {
-      images: false,
-    },
-  };
+gulp.task('polyfills', (done) => {
+  bundle({
+    name: 'polyfills.js',
+    entries: `${__dirname}/client/polyfills.js`,
+    dest: ASSETS,
+  }, done);
+});
 
-  juice.juiceFile(`${TEMPLATE_DIR}/template-nebenan.html`, options, (err, html) => {
-    if (err) return done(err);
-    writeTemplate('template-nebenan.html', html, done);
-  });
+gulp.task('i18n', (done) => {
+  i18n({ dest: ASSETS }, done);
+});
+
+gulp.task('styles', (done) => {
+  styles({
+    name: 'app.css',
+    source: `${__dirname}/styles/index.styl`,
+    dest: ASSETS,
+    paths: [
+      `${__dirname}/node_modules`,
+      `${__dirname}/client`,
+    ],
+  }, done);
 });
 
 gulp.task('watch', () => {
-  const list = [
-    `${TEMPLATE_DIR}/src/**/*.hbs`,
-    `${TEMPLATE_DIR}/src/styles/**/*.css`,
-  ];
-
-  require('gulp-watch')(list, triggerTaskAction('build'));
+  require('./build/watch')({
+    baseDir: __dirname,
+    bundleTask: 'bundle',
+    stylusTask: 'styles',
+    i18nTask: 'i18n',
+  });
 });
 
-gulp.task('build', (done) => {
-  sequence(
-    'compile',
-    'juicify',
-    done,
-  );
+gulp.task('server', () => {
+  require('./build/nodemon')({ baseDir: __dirname });
 });
 
 gulp.task('default', (done) => {
   sequence(
-    'build',
+    [
+      'bundle',
+      'polyfills',
+      'i18n',
+      'styles',
+    ],
     'watch',
+    'server',
+    done,
+  );
+});
+
+gulp.task('clean', () => (
+  del([`${ASSETS}/*.*`])
+));
+
+gulp.task('uglify', (done) => {
+  uglify({ src: `${ASSETS}/*.js`, dest: ASSETS }, done);
+});
+
+gulp.task('cleancss', (done) => {
+  cleancss({ src: `${ASSETS}/app.css`, dest: ASSETS }, done);
+});
+
+gulp.task('revision', (done) => {
+  revision({ folder: ASSETS }, done);
+});
+
+gulp.task('gzip', (done) => {
+  gzip({ folder: ASSETS }, done);
+});
+
+gulp.task('build', (done) => {
+  sequence(
+    'clean',
+    [
+      'bundle',
+      'polyfills',
+      'i18n',
+      'styles',
+    ],
+    [
+      'uglify',
+      'cleancss',
+    ],
+    'revision',
+    'gzip',
     done,
   );
 });
