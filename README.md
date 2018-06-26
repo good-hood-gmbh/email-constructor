@@ -1,8 +1,11 @@
-# Nebenan Email Constructor
+# Emaily
 
-## Usage
+## Usage:
 
-* Download or Clone Repo 
-* Install NodeJS with a native installer via [NodeJS.org website](https://nodejs.org/en/).
-* Double Click `staging_mode.command` to work with Bart or `production_mode.command` to work with Live.
-* Navigate to http://127.0.0.1:9006/editor.html#{template_id}. _Template id can be found in backoffice -> newsletter templates section._
+1. Install NodeJS with a native installer via [NodeJS.org website](https://nodejs.org/).
+2. Instal Gulp as a global package: `npm install gulp-cli -g`.
+3. Install project dependencies: `npm i`.
+6. Start website.
+   1. Development mode `npm start`.
+   2. Production mode `npm run production`.
+   3. Navigate to [http://localhost:3000/](http://localhost:3000/).

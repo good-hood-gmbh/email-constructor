@@ -1,0 +1,25 @@
+doctype html
+html(lang=locale)
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    title Emaily
+
+    meta(name="Generator", content="Microsoft FrontPage 2.3")
+    meta(name="viewport", content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no")
+    meta(name="HandheldFriendly", content="True")
+    meta(name="MobileOptimized", content="320")
+    meta(name="format-detection", content="telephone=no")
+    meta(http-equiv="cleartype", content="on")
+
+    link(rel="stylesheet", href=asset('app.css'))
+
+  body
+    main#root!=content
+
+    script.
+      window.__appConfig__ = !{JSON.stringify(config)};
+
+    script(src=asset(`locale-${locale}.js`))
+    script(src=asset('polyfills.js'))
+    script(src=asset('app.js'))
