@@ -19,9 +19,12 @@ juice.styleToAttribute = {
   cellspacing: 'cellspacing',
 };
 
+const randomNum = () => ((Math.random() * 16) | 0).toString(16);
+const generateHash = () => (new Array(20)).fill(0).map(() => randomNum()).join('');
+
 const helpers = {
   local_image_url: (image) => `images/${image}`,
-  image_url: (image) => `${config.get('Client').static_root}/${image}`,
+  image_url: (image) => `${config.get('Client').static_root}/${image}?decache=${generateHash()}`,
   i18n_image_url: (image) => helpers.image_url(image.replace(EXT_REGEXP, `_${LOCALE_POSTFIX}.$1`)),
   config: (key) => config.get('Client')[key],
   t: (key) => dictionary[key],
