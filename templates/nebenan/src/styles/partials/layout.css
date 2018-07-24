@@ -1,16 +1,24 @@
 body,
-.c-layout {
+.c-layout,
+.c-layout-wrapper {
   background-color: #edede9;
 }
 
-.c-layout-wrapper {
-  max-width: 640px;
-  width: 100%;
+.c-layout-wrapper-body {
   text-align: center;
-  background-color: #edede9;
+  vertical-align: top;
+}
+
+.c-layout-padding {
+  width: 15px;
 }
 
 .c-layout-content {
+  table-layout: auto;
+}
+
+.c-layout-content-body {
+  width: 600px;
   text-align: left;
   vertical-align: top;
 }
