@@ -9,3 +9,9 @@
   line-height: 5px;
   font-size: 5px;
 }
+
+.c-space .c-card-content,
+.c-space .c-card-padding {
+  line-height: 0;
+  font-size: 0;
+}
