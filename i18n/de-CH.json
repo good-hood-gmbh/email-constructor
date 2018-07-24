@@ -1,3 +1,7 @@
 {
-  "header": "Neues von <span>nebenan</span>.de"
+  "header": "Neues von <a href=\"https://nebenan.ch/\">nebenan.ch</a>",
+  "link": "https://nebenan.ch",
+  "contact_instagram": "https://www.instagram.com/nebenan.de",
+  "contact_facebook": "https://www.facebook.com/nebenan.de",
+  "contact_twitter": "https://twitter.com/nebenan_DE"
 }

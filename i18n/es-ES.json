@@ -1,3 +1,7 @@
 {
-  "header": "Últimas noticias de <span>¿Tienes sal?</span>"
+  "header": "Últimas noticias de <a href=\"https://tienes-sal.es/\">¿Tienes sal?</a>",
+  "link": "https://tienes-sal.es",
+  "contact_instagram": "https://www.instagram.com/nebenan.de",
+  "contact_facebook": "https://www.facebook.com/nebenan.de",
+  "contact_twitter": "https://twitter.com/nebenan_DE"
 }
