@@ -4,6 +4,12 @@
   background-color: #edede9;
 }
 
-.c-separator-wide .c-card-container > table {
-  width: 100%;
+.c-separator-wide .c-card-padding {
+  width: 0;
+}
+
+.c-separator .c-card-content,
+.c-separator .c-card-padding {
+  line-height: 0;
+  font-size: 0;
 }
