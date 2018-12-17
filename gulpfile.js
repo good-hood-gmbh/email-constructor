@@ -1,7 +1,6 @@
 const { parse } = require('path');
 const { readdirSync, readFileSync, writeFile } = require('fs');
 const gulp = require('gulp');
-const sequence = require('run-sequence');
 const handlebars = require('handlebars');
 const juice = require('juice');
 const config = require('config')
