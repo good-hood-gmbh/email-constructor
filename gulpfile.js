@@ -90,21 +90,8 @@ gulp.task('watch', () => {
     `${TEMPLATE_DIR}/src/styles/**/*.css`,
   ];
 
-  require('gulp-watch')(list, triggerTaskAction('build'));
+  gulp.watch(list, gulp.series('build'));
 });
 
-gulp.task('build', (done) => {
-  sequence(
-    'compile',
-    'juicify',
-    done,
-  );
-});
-
-gulp.task('default', (done) => {
-  sequence(
-    'build',
-    'watch',
-    done,
-  );
-});
+gulp.task('build', gulp.series('compile', 'juicify'));
+gulp.task('default', gulp.series('build', 'watch'));
