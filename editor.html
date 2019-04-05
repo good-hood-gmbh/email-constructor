@@ -45,8 +45,35 @@
           document.location = ".";
         }
 
+        function getParameterByName(name, url) {
+          if (!url) url = window.location.href;
+          name = name.replace(/[\[\]]/g, '\\$&');
+          var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+          if (!results) return undefined;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        var url = window.location.href;
+
         var config = __config__.get('Client');
-        var template_id = window.location.hash ? window.location.hash.substr(1) : undefined;
+        var template_id = getParameterByName('template_id', url);
+        var tmp_token = getParameterByName('tmp_token', url);
+
+        var authorize = function(token) {
+          var loginUrl = config.api_root + '/api/newsletter/issue_token.json';
+          function handleRequest (res) {
+            var authToken = res.token
+            $.ajaxSetup({
+              beforeSend: function(xhr) {
+                xhr.setRequestHeader('X-Auth-Token', authToken);
+              }
+            })
+          }
+          $.post(loginUrl, token, handleRequest, 'json');
+        };
+        authorize(tmp_token);
 
         const defaultOptions = {
           imgProcessorBackend: config.api_root + '/api/newsletter/image_processor.json',
