@@ -62,8 +62,10 @@
         var tmp_token = getParameterByName('tmp_token', url);
 
         var authorize = function(token) {
+          console.log('authorize shot')
           var loginUrl = config.api_root + '/api/newsletter/issue_token.json';
           function handleRequest (res) {
+            console.log('handlerequest shot')
             var authToken = res.token
             $.ajaxSetup({
               beforeSend: function(xhr) {
@@ -71,7 +73,15 @@
               }
             })
           }
-          $.post(loginUrl, token, handleRequest, 'json');
+          function handleError (res) {
+            console.log('handle error hsot')
+            console.log(res)
+          }
+          $.ajax({
+            method: "POST",
+
+          })
+          $.post(loginUrl, token, handleRequest, 'json').error(handleError);
         };
         authorize(tmp_token);
 
