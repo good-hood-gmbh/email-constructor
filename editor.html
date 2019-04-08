@@ -41,7 +41,6 @@
         var config = __config__.get('Client');
         var template_id = getParameterByName('template_id', url);
         var tmp_token = getParameterByName('tmp_token', url);
-        var authToken = '';
 
         const defaultOptions = {
           imgProcessorBackend: config.api_root + '/api/newsletter/image_processor.json',
@@ -96,11 +95,9 @@
         }
 
         function handleAuthorizeSuccess (res) {
-          authToken = res.token;
-
           $.ajaxSetup({
             beforeSend: function(xhr) {
-              xhr.setRequestHeader('x-auth-token', authToken);
+              xhr.setRequestHeader('x-auth-token', res.token);
             }
           });
 
@@ -109,13 +106,9 @@
 
 
         function authorizeAndGetTemplate(token) {
-          if (!authToken) {
-            var loginUrl = config.api_root + '/api/newsletter/issue_token.json';
+          var loginUrl = config.api_root + '/api/newsletter/issue_token.json';
 
-            $.post(loginUrl, { tmp_token: token }, handleAuthorizeSuccess, 'json').error(handleTokenError);
-          } else {
-            getTemplate();
-          }
+          $.post(loginUrl, { tmp_token: token }, handleAuthorizeSuccess, 'json').error(handleTokenError);
         }
 
         authorizeAndGetTemplate(tmp_token);
