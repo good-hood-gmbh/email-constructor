@@ -1,7 +1,7 @@
 {
   "Client": {
     "locale": "de-DE",
-    "api_root": "https://bart.nebenan.de",
+    "api_root": "https://bart-api.nebenan.de",
     "bo_root": "https://bart-backoffice.nebenan.de",
     "static_root": "https://static.nebenan.de/assets/newsletter_assets",
     "titleToken": "MOSAICO - nebenan - Responsive Email Designer"
