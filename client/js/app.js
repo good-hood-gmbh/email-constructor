@@ -38,6 +38,15 @@ function _appendUrlParameters(baseUrl, parameters) {
   return res;
 }
 
+function getParameterByName(name, url) {
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+    results = regex.exec(url);
+  if (!results) return undefined;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
 var applyBindingOptions = function(options, ko) {
 
   ko.bindingHandlers.wysiwygSrc.convertedUrl = function(src, method, width, height) {
@@ -167,7 +176,7 @@ var initFromServerStorage = function(options, template, metadata, customExtensio
 
 var init = function(options, customExtensions) {
 
-  var hash = global.location.hash ? global.location.href.split("#")[1] : undefined;
+  var hash = getParameterByName('template_id', global.location.href);
   // Loading from configured template or configured metadata
   if (options && (options.template && options.metadata)) {
     initFromServerStorage(options, options.template, options.metadata , customExtensions);

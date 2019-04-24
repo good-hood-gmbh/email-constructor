@@ -4,6 +4,15 @@ var console = require("console");
 var ko = require("knockout");
 var $ = require("jquery");
 
+function getParameterByName(name, url) {
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+    results = regex.exec(url);
+  if (!results) return undefined;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
 var ssLoader = function(template, metadata, emailProcessorBackend,boLink) {
     return {
       metadata: metadata,
@@ -25,8 +34,9 @@ var ssCommandPluginFactory = function(md, emailProcessorBackend,boLink) {
 
 
     downloadCmd.back = function() {
-      global.location = boLink + (global.location.hash ? global.location.href.split("#")[1] : undefined);
+      global.location = boLink + getParameterByName('template_id', global.location.href);
     };
+
 
     downloadCmd.execute = function() {
       downloadCmd.enabled(false);
@@ -40,7 +50,7 @@ var post = $.post(postUrl, {
   html: viewModel.exportHTML(),
   metadata: viewModel.exportMetadata(),
   json: viewModel.exportJSON(),
-  template_id: global.location.hash ? global.location.href.split("#")[1] : undefined,
+  template_id: getParameterByName('template_id', global.location.href),
   md: mdkey + " - " + mdname
 }, null, 'html');
 post.fail(function() {
