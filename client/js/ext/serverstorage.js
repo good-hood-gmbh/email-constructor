@@ -58,10 +58,11 @@ post.fail(function() {
   viewModel.notifier.error(viewModel.t('Unexpected error talking to server: contact us!'));
 });
 post.success(function() {
-      viewModel.notifier.success(viewModel.t("Stored in BO"));
+  viewModel.notifier.success(viewModel.t("Stored in BO"));
 });
 post.always(function() {
   downloadCmd.enabled(true);
+  viewModel.importJSON(viewModel.exportJSON());
 });
 
 
