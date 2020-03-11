@@ -71,7 +71,7 @@
     "Unknown error": "Okänt fel",
     "Uploaded bytes exceed file size": "Uppladdade bytes överskrider filstorlek",
     "File type not allowed": "Filtypen är inte tillåten",
-    "File is too large": "Filen är för stor",
+    "File is too large. Max file size - 1.5Mb": "Filen är för stor",
     "The uploaded file exceeds the post_max_size directive in php.ini": "Den uppladdade filen överskrider post_max_size direktivet i php.ini",
     "File is too big": "Filen är för stor",
     "File is too small": "Filen är för liten",

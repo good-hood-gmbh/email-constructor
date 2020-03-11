@@ -71,7 +71,7 @@
     "Unknown error": "Onbekende fout",
     "Uploaded bytes exceed file size": "Plaatje te groot voor upload",
     "File type not allowed": "Bestandstype is niet toegestaan. Gebruik alleen .jpg, .gif of .png bestanden",
-    "File is too large": "Bestand is te groot",
+    "File is too large. Max file size - 1.5Mb": "Bestand is te groot",
     "The uploaded file exceeds the post_max_size directive in php.ini": "Geuploade bestanden zijn te groot (post_max_size directive in php.ini)",
     "File is too big": "Bestand is te groot",
     "File is too small": "Bestand is te klein",

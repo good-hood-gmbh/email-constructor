@@ -71,7 +71,7 @@
     "Unknown error": "Erreur inconue",
     "Uploaded bytes exceed file size": "Le nombre de bytes chargés excède la taille du fichier",
     "File type not allowed": "Type de fichier non-autorisé",
-    "File is too large": "Fichier trop lourd",
+    "File is too large. Max file size - 1.5Mb": "Fichier trop lourd",
     "The uploaded file exceeds the post_max_size directive in php.ini": "The uploaded file exceeds the post_max_size directive in php.ini",
     "File is too big": "Le fichier est trop lourd",
     "File is too small": "Le fichier est trop petit",

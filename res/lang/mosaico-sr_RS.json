@@ -71,7 +71,7 @@
     "Unknown error": "Nepoznata greška",
     "Uploaded bytes exceed file size": "Postavljeni fajl je veći od očekivane veličine",
     "File type not allowed": "Tip fajla nije podržan",
-    "File is too large": "Fajl je prevelik",
+    "File is too large. Max file size - 1.5Mb": "Fajl je prevelik",
     "The uploaded file exceeds the post_max_size directive in php.ini": "Postavljeni fajl je veći od post_max_size direktive u php.ini",
     "File is too big": "Fajl je prevelik",
     "File is too small": "Fajl je premali",
