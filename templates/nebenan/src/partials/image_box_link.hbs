@@ -1,0 +1,20 @@
+<div data-ko-block="image_box_link" class="c-image_box">
+  {{#> card}}
+    <a href="" data-ko-link="imageLinkUrl">
+      <img
+        style="-ko-attr-alt: @image.alt;"
+        data-ko-editable="imageLinkSrc"
+        src="{{local_image_url 'image_box_placeholder.png'}}"
+        height="auto"
+        width="100%"
+        vspace="0"
+        hspace="0"
+        border="0"
+      >
+    </a>
+    <br />
+    <div class="text" data-ko-editable="text" data-ko-display="showText">
+      Optional text
+    </div>
+  {{/card}}
+</div>

@@ -89,7 +89,7 @@ var start = function(options, templateFile, templateMetadata, jsorjson, customEx
         uploadedBytes: vm.t('Uploaded bytes exceed file size'),
         maxNumberOfFiles: vm.t('Maximum number of files exceeded'),
         acceptFileTypes: vm.t('File type not allowed'),
-        maxFileSize: vm.t('File is too large'),
+        maxFileSize: vm.t('File is too large. Max size - 1.5Mb'),
         minFileSize: vm.t('File is too small'),
         post_max_size: vm.t('The uploaded file exceeds the post_max_size directive in php.ini'),
         max_file_size: vm.t('File is too big'),

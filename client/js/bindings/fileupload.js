@@ -232,7 +232,7 @@ ko.bindingHandlers['fileupload'] = {
         uploadedBytes: 'Uploaded bytes exceed file size',
         maxNumberOfFiles: 'Maximum number of files exceeded',
         acceptFileTypes: 'File type not allowed',
-        maxFileSize: 'File is too large',
+        maxFileSize: 'File is too large. Max file size - 1.5Mb',
         minFileSize: 'File is too small',
         // server side
         post_max_size: 'The uploaded file exceeds the post_max_size directive in php.ini',
@@ -352,7 +352,7 @@ ko.bindingHandlers['fileupload'] = {
         }
         if (_file.error) {
           // File type not allowed
-          // File is too large
+          // File is too large. Max file size - 1.5Mb
           if (options.onerror) {
             options.onerror(translatedMessage(_file.error));
           }
