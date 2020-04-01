@@ -79,7 +79,7 @@
     "jsep": "^0.3.3",
     "jshint-stylish": "2.2.1",
     "juice": "^4.2.2",
-    "knockout": "3.4.1",
+    "knockout": "3.5.0",
     "knockout-jqueryui": "github:gvas/knockout-jqueryui#v2.2.3",
     "knockout-sortable": "github:rniemeyer/knockout-sortable#v0.15.0",
     "ko-reactor": "github:ZiadJ/knockoutjs-reactor#v1.3.9",
