@@ -71,7 +71,7 @@
     "gulp": "^4.0.0",
     "handlebars": "4.0.11",
     "jasmine-core": "2.9.1",
-    "jquery": "^1.12.4",
+    "jquery": "^3.5.0",
     "jquery-file-upload-middleware": "0.1.8",
     "jquery-ui-dist": "^1.11.4",
     "jquery-ui-touch-punch": "^0.2.3",
