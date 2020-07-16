@@ -84,7 +84,7 @@
     "knockout-sortable": "github:rniemeyer/knockout-sortable#v0.15.0",
     "ko-reactor": "github:ZiadJ/knockoutjs-reactor#v1.3.9",
     "load-grunt-tasks": "3.5.2",
-    "lodash": "4.17.5",
+    "lodash": "4.17.19",
     "mensch": "^0.3.3",
     "mockery": "2.1.0",
     "nodemailer": "4.4.2",
