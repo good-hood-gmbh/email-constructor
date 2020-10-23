@@ -1,0 +1,22 @@
+<div data-ko-block="header_organizations_with_text" class="c-header">
+  <span
+    class="c-header-preview"
+    data-ko-display="previewText"
+    style="-ko-bind-html: @previewText"
+  >
+  </span>
+  {{#> card}}
+    <table class="grid">
+      <tr>
+        <td class="c-header-logo">
+          <a href="{{t 'link_org'}}" target="_blank">
+            <img src="{{i18n_image_url 'logo_organizations.png'}}" border="0" width="auto" height="44" />
+          </a>
+        </td>
+        <td class="c-header-label text">
+          {{{t 'header'}}}
+        </td>
+      </tr>
+    </table>
+  {{/card}}
+</div>
