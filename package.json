@@ -87,7 +87,7 @@
     "lodash": "4.17.5",
     "mensch": "^0.3.3",
     "mockery": "2.1.0",
-    "nodemailer": "4.4.2",
+    "nodemailer": "6.4.16",
     "slick": "github:kamicane/slick#v1.12.2",
     "tinycolor2": "github:bgrins/TinyColor#1.4.1",
     "tinymce": "^4.7.6",
