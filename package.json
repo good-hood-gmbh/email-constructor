@@ -90,7 +90,7 @@
     "nodemailer": "4.4.2",
     "slick": "github:kamicane/slick#v1.12.2",
     "tinycolor2": "github:bgrins/TinyColor#1.4.1",
-    "tinymce": "^4.7.6",
+    "tinymce": "^5.7.1",
     "toastr": "^2.1.4",
     "uglifyify": "4.0.5"
   },
